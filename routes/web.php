@@ -4,6 +4,7 @@ use App\Http\Controllers\Answer\AnswerController;
 use App\Http\Controllers\Register\GuestRegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +18,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 // user value cannot be found in session
-Route::get('/', function (Request $request) {
-    // $request->session()->flush();
-    return view('index');
-});
+// Route::get('/', function (Request $request) {
+    
+//     return view('index');
+// });
 
 //============= GET METHOD =====================
+//Get View Registrasi
+Route::get('/', [GuestRegisterController::class, 'flush_guest']);
+//Get View Registrasi
+Route::get('register', [GuestRegisterController::class, 'index']);
+//Get View Konfirmasi Jawab Ulang
+Route::get('konfirmasi', [GuestRegisterController::class, 'konfirmasi']);
 //Get Soal Kategori Akademik
-Route::get('form_registrasi', [GuestRegisterController::class, 'index']);
 Route::get('akademik_decision', [AnswerController::class, 'akademik_decision']);
 Route::get('akademik_yes_view', [AnswerController::class, 'akademik_yes_view']);
 Route::get('akademik_no_view', [AnswerController::class, 'akademik_no_view']);
@@ -58,6 +64,7 @@ Route::post('personal_brand', [AnswerController::class, 'personal_brand']);
 Route::post('komunikasi', [AnswerController::class, 'komunikasi']);
 //Simpan Result
 Route::post('result', [AnswerController::class, 'result']);
+//Simpan Konfirmasi
+Route::get('konfirmasi_yes/{id}', [AnswerController::class, 'konfirmasi_yes']);
 
-//Reset Session go to index Result
-// Route::get('/', [AnswerController::class, 'done']);
+Route::get('send_mail', [AnswerController::class, 'generatePDF']);

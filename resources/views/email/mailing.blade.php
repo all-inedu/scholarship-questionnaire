@@ -21,7 +21,7 @@
             h2,
             h3,
             td {
-                color: #EEAB58 !important;
+                color: #FFFFFF !important;
                 padding: 0px 0px 0px 0px !important;
             }
 
@@ -66,6 +66,10 @@
             background-color: #233872;
             width: "100%";
             align-items: center;
+        }
+
+        .form-result {
+            padding-left: 2rem;
         }
 
         .mentor-tips {
@@ -283,11 +287,11 @@
                                                             style="padding-right: 5%;">
                                                             <tr>
                                                                 <td>
-                                                                    <p
+                                                                    <p class="pl-3"
                                                                         style="text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px; margin-left: 5%; color: #ffffff; text-align: justify;">
                                                                         @if ($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1)
                                                                             <form class="form-result">
-                                                                                <p class="result_question">
+                                                                                <p class="result_question pl-3">
                                                                                     Halo,
                                                                                     <b>{{ $jawaban->guestss->full_name }}</b>
                                                                                     <br><br>
@@ -309,7 +313,7 @@
                                                                             </form>
                                                                         @elseif ($academic == 0 && $aktivitas == 0 && $prestasi == 0 && $personal_brand == 0 && $komunikasi == 0)
                                                                             <form class="form-result">
-                                                                                <p class="result_question">
+                                                                                <p class="result_question pl-3">
                                                                                     Halo,
                                                                                     <b>{{ $jawaban->guestss->full_name }}</b>
                                                                                     <br><br>
@@ -337,7 +341,7 @@
                                                                             </form>
                                                                         @elseif ($academic == 0 || $aktivitas == 0 || $prestasi == 0 || $personal_brand == 0 || $komunikasi == 0)
                                                                             <form class="form-result">
-                                                                                <p class="result_question">
+                                                                                <p class="result_question pl-3">
                                                                                     Halo,
                                                                                     <b>{{ $jawaban->guestss->full_name }}</b>
                                                                                     <br><br>
@@ -502,10 +506,11 @@
                                                                                 <li style="box-sizing: border-box;">
                                                                                     <p class="quiz-form__question">
                                                                                         <b>Poin aktivitas/kegiatanmu
-                                                                                            belum menyentuh angka
-                                                                                            minimum
-                                                                                            dari
-                                                                                            questionnaire ini, sehingga:
+                                                                                        </b>
+                                                                                        belum menyentuh angka
+                                                                                        minimum
+                                                                                        dari
+                                                                                        questionnaire ini, sehingga:
                                                                                     </p>
                                                                                     <ul>
                                                                                         <li
@@ -845,9 +850,11 @@
                                                                         <br>
                                                                     @endif
                                                                     </li>
+                                                                    </ul>
 
-                                                                    <p
-                                                                        style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;orphans: 3;font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px;color: #ffffff; text-align: justify;">
+                                                                    </p>
+                                                                    <p class="pl-3"
+                                                                        style="padding-top: 1.5rem;text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 16px; margin-left: 5%; color: #ffffff; text-align: justify;">
                                                                         Sebagai pendaftar beasiswa, kamu perlu
                                                                         ingat bahwa sainganmu tidaklah sedikit
                                                                         sehingga
@@ -857,9 +864,6 @@
                                                                         Tetaplah semangat dan
                                                                         good
                                                                         luck!
-                                                                    </p>
-
-                                                                    </ul>
                                                                     </p>
                                                                 </td>
                                                             </tr>
@@ -946,8 +950,8 @@
                                                                             </td>
                                                                         </tr>
                                                                     </table>
-                                                                    <a href="{$unsubscribe}"
-                                                                        style="font-size: 10px;">Unsubscribe</a>
+                                                                    {{-- <a href="{$unsubscribe}"
+                                                                        style="font-size: 10px;">Unsubscribe</a> --}}
                                                                 </div>
                                                             </div>
                                                         </td>

@@ -25,7 +25,8 @@ use Illuminate\Support\Facades\Session;
 
 //============= GET METHOD =====================
 //Get View Registrasi
-Route::get('/', [GuestRegisterController::class, 'flush_guest']);
+route::get('/', 'GuestRegisterController@flush_guest');
+// Route::get('/', [GuestRegisterController::class, 'flush_guest']);
 //Get View Registrasi
 Route::get('register', [GuestRegisterController::class, 'index']);
 //Get View Konfirmasi Jawab Ulang

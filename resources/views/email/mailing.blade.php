@@ -14,14 +14,14 @@
 
         @media (prefers-color-scheme: dark) {
             .body {
-                background-color: #1C274A !important;
+                background-color: #FFFFFF !important;
             }
 
             h1,
             h2,
             h3,
             td {
-                color: #FFFFFF !important;
+                color: #535353 !important;
                 padding: 0px 0px 0px 0px !important;
             }
 
@@ -39,7 +39,7 @@
         }
 
         body {
-            background-color: #1C274A !important;
+            background-color: #FFFFFF !important;
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.15;
             -webkit-text-size-adjust: 100%;
@@ -69,25 +69,8 @@
         }
 
         .form-result {
-            padding-left: 2rem;
-        }
-
-        .mentor-tips {
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: auto !important;
-            background-position: right;
-            background-color: #233872;
-            align-items: center;
-        }
-
-        .success-story {
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: auto !important;
-            background-position: right;
-            background-color: #233872;
-            align-items: center;
+            padding-left: 1rem;
+            padding-right: 1rem
         }
 
         .what-to-watch {
@@ -138,50 +121,12 @@
 
         body {
             margin: 0px;
-            color: #233872;
-            background-color: #233872 !important;
+            color: #FFFFFF;
+            background-color: #FFFFFF !important;
         }
 
         @media screen and (max-width: 700px) {
-            .our-blog {
-                background: #233872;
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: auto !important;
-                background-position: right;
-                width: "100%";
-                align: center;
-            }
 
-            .mentor-tips {
-                background: #233872;
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: auto !important;
-                background-position: right;
-                width: "100%";
-                align: center;
-            }
-
-            .success-story {
-                background: #233872;
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: auto !important;
-                background-position: right;
-                width: "100%";
-                align: center;
-            }
-
-            .what-to-watch {
-                background: #233872;
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: auto !important;
-                background-position: right;
-                width: "100%";
-                align: center;
-            }
 
             /* {
                 background: #233872;
@@ -193,31 +138,7 @@
                 align: center;
             } */
 
-            .important-dates {
-                background: #233872;
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: auto !important;
-                background-position: right;
-                width: "100%";
-                align: center;
-            }
 
-            .footer-text {
-                background-color: #ffffff;
-                color: #233872;
-                text-align: center;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-
-            .footer-text-dua {
-                position: relative;
-                top: 80%;
-                left: 50%;
-                transform: translate(-50%, -70%);
-                width: 80%;
-                text-align: center;
-            }
 
             .width100 {
                 width: 100%;
@@ -237,15 +158,14 @@
     </style>
 </head>
 
-<body style="font-family: Arial,Helvetica,sans-serif; background-color: #1C274A  !important;" class="body">
+<body style="font-family: Arial,Helvetica,sans-serif; background-color: #FFFFFF  !important;" class="body">
     <!-- Whole email newsletter table -->
 
-    <div style="font-family: Arial,Helvetica,sans-serif; background-color: #1C274A  !important;">
+    <div style="font-family: Arial,Helvetica,sans-serif; background-color: #FFFFFF  !important;">
         <table cellpadding="0" cellspacing="0" width="100%" border="0" align="center">
             <tr>
                 <td>
-
-                    <table style="background-color: #233872;" cellpadding="0" cellspacing="0" width="600"
+                    <table style="background-color: #FFFFFF;" cellpadding="0" cellspacing="0" width="600"
                         align="center" class="width100">
                         <tr>
                             <td>
@@ -257,10 +177,9 @@
                                     style="border-left:1px solid #1C274A; border-right:1px solid #1C274A; width: 100% !important;">
                                     <tr>
                                         <td>
-                                            <div
-                                                style="background:#fff;background:linear-gradient(270deg,#EEAB58 20%,rgba(255,255,255,0) 77%); width: 100% !important;">
+                                            <div style="background:#EEAB58; width: 100% !important;">
                                                 <div class="col pl-4 p-2"
-                                                    style="width: 100% !important;padding: 0.5rem!important;padding-left: 1.6rem !important;">
+                                                    style="width: 100% !important;padding: 0.5rem!important;">
                                                     <div
                                                         style="text-align: center; color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;font-size: 24px;margin-bottom: 0!important;font-weight:500;line-height: 1.2;margin-top: 0; display: block; width: 100%;">
                                                         <b>Hasil Result Kamu</b>
@@ -284,11 +203,11 @@
                                                         <!-- Inner table - left image -->
                                                         <table cellpadding="0" cellspacing="0" width="100%"
                                                             border="0" align="left" class="width100"
-                                                            style="padding-right: 5%;">
+                                                            style="background: #ffffff;">
                                                             <tr>
                                                                 <td>
-                                                                    <p class="pl-3"
-                                                                        style="text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px; margin-left: 5%; color: #ffffff; text-align: justify;">
+                                                                    <p
+                                                                        style="text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px; margin-left: 5%; color: #535353; text-align: justify;">
                                                                         @if ($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1)
                                                                             <form class="form-result">
                                                                                 <p class="result_question pl-3">
@@ -366,15 +285,14 @@
                                                                             </form>
                                                                         @endif
                                                                     </p>
-
+                                                                    <hr>
                                                                     <p
-                                                                        style="text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px; margin-left: 5%; color: #ffffff;">
-                                                                    <ul class="pl-3"
-                                                                        style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;text-align: left!important;color: #ffffff !important;">
+                                                                        style="text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px; color: #535353;">
+                                                                    <ul
+                                                                        style="box-sizing: border-box;margin-top: 0;margin-bottom: 1rem;text-align: left!important;color: #535353 !important; padding-left:1rem;">
 
                                                                         @if ($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1)
                                                                             <form class="form-result">
-
                                                                                 <p class="quiz-form__question">
                                                                                     Namun, akan lebih maksimal
                                                                                     apabila kamu tetap
@@ -426,7 +344,6 @@
 
                                                                         @if ($academic == 0)
                                                                             <form class="form-result">
-                                                                                <br>
                                                                                 <li style="box-sizing: border-box;">
                                                                                     <p class="quiz-form__question">
                                                                                         <b>Poin akademikmu</b> belum
@@ -434,7 +351,7 @@
                                                                                         dari
                                                                                         questionnaire ini, sehingga:
                                                                                     </p>
-                                                                                    <ul>
+                                                                                    <ul style="padding-left: 1rem;">
                                                                                         <li
                                                                                             class="quiz-form__question2">
                                                                                             <p>
@@ -454,8 +371,6 @@
                                                                                                 memiliki sistem ranking)
                                                                                             </p>
                                                                                         </li>
-                                                                                    </ul>
-                                                                                    <ul>
                                                                                         <li
                                                                                             class="quiz-form__question2">
                                                                                             <p>
@@ -476,8 +391,6 @@
                                                                                                 pengembangan kemampuan
                                                                                             </p>
                                                                                         </li>
-                                                                                    </ul>
-                                                                                    <ul>
                                                                                         <li
                                                                                             class="quiz-form__question2">
                                                                                             <p>
@@ -495,14 +408,13 @@
                                                                                             </p>
                                                                                         </li>
                                                                                     </ul>
+
                                                                                 </li>
                                                                             </form>
-                                                                            <br>
                                                                         @endif
 
                                                                         @if ($aktivitas == 0)
                                                                             <form class="form-result">
-                                                                                <br>
                                                                                 <li style="box-sizing: border-box;">
                                                                                     <p class="quiz-form__question">
                                                                                         <b>Poin aktivitas/kegiatanmu
@@ -512,7 +424,7 @@
                                                                                         dari
                                                                                         questionnaire ini, sehingga:
                                                                                     </p>
-                                                                                    <ul>
+                                                                                    <ul style="padding-left: 1rem;">
                                                                                         <li
                                                                                             class="quiz-form__question2">
                                                                                             <p>
@@ -540,8 +452,6 @@
                                                                                             class="quiz-form__question3">
                                                                                             <p>Internship/part-time.</p>
                                                                                         </li>
-                                                                                    </ul>
-                                                                                    <ul>
                                                                                         <li
                                                                                             class="quiz-form__question2">
                                                                                             <p>
@@ -583,92 +493,100 @@
                                                                                             class="quiz-form__question3">
                                                                                             <p>Inovasi karya seni</p>
                                                                                         </li>
+                                                                                    </ul>
                                                                                 </li>
+                                                                            </form>
+                                                                        @endif
+
+                                                                        @if ($personal_brand == 0)
+                                                                            <form class="form-result">
+                                                                                <li style="box-sizing: border-box;">
+                                                                                    <p class="quiz-form__question">
+                                                                                        <b>Poin
+                                                                                            prestasimu </b> belum
+                                                                                        menyentuh
+                                                                                        angka minimum
+                                                                                        dari
+                                                                                        questionnaire ini, sehingga:</p>
+                                                                                    <ul style="padding-left: 1rem;">
+                                                                                        <li
+                                                                                            class="quiz-form__question2">
+                                                                                            <p>
+                                                                                                Cobalah untuk
+                                                                                                mengeksplorasi
+                                                                                                hal-hal yang mendukung
+                                                                                                pengembangan diri,
+                                                                                                pendidikan
+                                                                                                dan
+                                                                                                karirmu, seperti:
+                                                                                            </p>
+                                                                                        <li
+                                                                                            class="quiz-form__question3">
+                                                                                            <p>Jurusan yang kamu minati.
+                                                                                            </p>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="quiz-form__question3">
+                                                                                            <p>Universitas yang
+                                                                                                menurutmu
+                                                                                                metode
+                                                                                                pembelajaran dan
+                                                                                                lingkungannya
+                                                                                                mendukung
+                                                                                                kegiatan
+                                                                                                pembelajaranmu.</p>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="quiz-form__question3">
+                                                                                            <p>Kemampuan-kemampuan non
+                                                                                                akademik,
+                                                                                                seperti: seni, olahraga,
+                                                                                                dan
+                                                                                                sejenisnya.</p>
+                                                                                        </li>
+                                                                                        <li
+                                                                                            class="quiz-form__question3">
+                                                                                            <p>Dan sebagainya.</p>
+                                                                                        </li>
+                                                                                </li>
+                                                                    </ul>
+                                                                    <ul>
+                                                                        <li class="quiz-form__question2">
+                                                                            <p>
+                                                                                Beberapa jenis media yang
+                                                                                dapat
+                                                                                digunakan untuk
+                                                                                mengembangkan
+                                                                                poin-poin
+                                                                                diatas
+                                                                                adalah:
+                                                                            </p>
+                                                                        <li class="quiz-form__question3">
+                                                                            <p>Menghadiri campus/major expo.
+                                                                            </p>
+                                                                        </li>
+                                                                        <li class="quiz-form__question3">
+                                                                            <p>Mengikuti kegiatan
+                                                                                pelatihan/les.
+                                                                            </p>
+                                                                        </li>
+                                                                        <li class="quiz-form__question3">
+                                                                            <p>Mengikuti short
+                                                                                courses/bootcamp.
+                                                                            <p>
+                                                                        </li>
+                                                                        <li class="quiz-form__question3">
+                                                                            <p>Dan sebagainya.</p>
+                                                                        </li>
+                                                                        </li>
                                                                     </ul>
                                                                     </li>
                                                                     </form>
-                                                                    @endif
-
-                                                                    @if ($personal_brand == 0)
-                                                                        <form class="form-result">
-                                                                            <br>
-                                                                            <li style="box-sizing: border-box;">
-                                                                                <p class="quiz-form__question"><b>Poin
-                                                                                        prestasimu </b> belum menyentuh
-                                                                                    angka minimum
-                                                                                    dari
-                                                                                    questionnaire ini, sehingga:</p>
-                                                                                <ul>
-                                                                                    <li class="quiz-form__question2">
-                                                                                        <p>
-                                                                                            Cobalah untuk mengeksplorasi
-                                                                                            hal-hal yang mendukung
-                                                                                            pengembangan diri,
-                                                                                            pendidikan
-                                                                                            dan
-                                                                                            karirmu, seperti:
-                                                                                        </p>
-                                                                                    <li class="quiz-form__question3">
-                                                                                        <p>Jurusan yang kamu minati.</p>
-                                                                                    </li>
-                                                                                    <li class="quiz-form__question3">
-                                                                                        <p>Universitas yang menurutmu
-                                                                                            metode
-                                                                                            pembelajaran dan
-                                                                                            lingkungannya
-                                                                                            mendukung
-                                                                                            kegiatan
-                                                                                            pembelajaranmu.</p>
-                                                                                    </li>
-                                                                                    <li class="quiz-form__question3">
-                                                                                        <p>Kemampuan-kemampuan non
-                                                                                            akademik,
-                                                                                            seperti: seni, olahraga, dan
-                                                                                            sejenisnya.</p>
-                                                                                    </li>
-                                                                                    <li class="quiz-form__question3">
-                                                                                        <p>Dan sebagainya.</p>
-                                                                                    </li>
-                                                                            </li>
-                                                                            </ul>
-                                                                            <ul>
-                                                                                <li class="quiz-form__question2">
-                                                                                    <p>
-                                                                                        Beberapa jenis media yang
-                                                                                        dapat
-                                                                                        digunakan untuk
-                                                                                        mengembangkan
-                                                                                        poin-poin
-                                                                                        diatas
-                                                                                        adalah:
-                                                                                    </p>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Menghadiri campus/major expo.
-                                                                                    </p>
-                                                                                </li>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Mengikuti kegiatan
-                                                                                        pelatihan/les.
-                                                                                    </p>
-                                                                                </li>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Mengikuti short
-                                                                                        courses/bootcamp.
-                                                                                    <p>
-                                                                                </li>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Dan sebagainya.</p>
-                                                                                </li>
-                                                                                </li>
-                                                                            </ul>
-                                                                            </li>
-                                                                        </form>
-                                                                        <br>
+                                                                    <br>
                                                                     @endif
 
                                                                     @if ($prestasi == 0)
                                                                         <form class="form-result">
-                                                                            <br>
                                                                             <li style="box-sizing: border-box;">
                                                                                 <p class="quiz-form__question"><b>Poin
                                                                                         personal brandmu</b> belum
@@ -677,7 +595,7 @@
                                                                                     minimum
                                                                                     dari
                                                                                     questionnaire ini, sehingga:</p>
-                                                                                <ul>
+                                                                                <ul style="padding-left: 1rem;">
                                                                                     <li class="quiz-form__question2">
                                                                                         <p>
                                                                                             Cobalah dan ikutilah
@@ -736,12 +654,10 @@
                                                                             </ul>
                                                                             </li>
                                                                         </form>
-                                                                        <br>
                                                                     @endif
 
                                                                     @if ($komunikasi == 0)
                                                                         <form class="form-result">
-                                                                            <br>
                                                                             <li style="box-sizing: border-box;">
                                                                                 <p class="quiz-form__question"><b>Poin
                                                                                         communication skillsmu </b>
@@ -751,7 +667,7 @@
                                                                                     minimum
                                                                                     dari questionnaire ini, sehingga:
                                                                                 </p>
-                                                                                <ul>
+                                                                                <ul style="padding-left: 1rem;">
                                                                                     <li class="quiz-form__question2">
                                                                                         <p>
                                                                                             Persiapkan diri untuk
@@ -813,48 +729,44 @@
                                                                                             ada.
                                                                                         </p>
                                                                                     </li>
+                                                                                    <li class="quiz-form__question2">
+                                                                                        <p>
+                                                                                            Persiapkan diri untuk
+                                                                                            menulis
+                                                                                            sebuah essay yang baik dan
+                                                                                            sesuai
+                                                                                            kebutuhan,
+                                                                                            dengan:
+                                                                                        </p>
+                                                                                    <li class="quiz-form__question3">
+                                                                                        <p>Mengenali kriteria essay yang
+                                                                                            baik dimata pemberi
+                                                                                            beasiswa.
+                                                                                        </p>
+                                                                                    </li>
+                                                                                    <li class="quiz-form__question3">
+                                                                                        <p>Sesuaikan tema essay dengan
+                                                                                            tema
+                                                                                            yang diminta.</p>
+                                                                                    </li>
+                                                                                    <li class="quiz-form__question3">
+                                                                                        <p>Gunakan bahasa yang baik dan
+                                                                                            mudah dicerna, namun tetap
+                                                                                            menarik untuk
+                                                                                            dibaca.
+                                                                                        <p>
+                                                                                    </li>
                                                                             </li>
                                                                             </ul>
-                                                                            <ul>
-                                                                                <li class="quiz-form__question2">
-                                                                                    <p>
-                                                                                        Persiapkan diri untuk
-                                                                                        menulis
-                                                                                        sebuah essay yang baik dan
-                                                                                        sesuai
-                                                                                        kebutuhan,
-                                                                                        dengan:
-                                                                                    </p>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Mengenali kriteria essay yang
-                                                                                        baik dimata pemberi
-                                                                                        beasiswa.
-                                                                                    </p>
-                                                                                </li>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Sesuaikan tema essay dengan
-                                                                                        tema
-                                                                                        yang diminta.</p>
-                                                                                </li>
-                                                                                <li class="quiz-form__question3">
-                                                                                    <p>Gunakan bahasa yang baik dan
-                                                                                        mudah dicerna, namun tetap
-                                                                                        menarik untuk
-                                                                                        dibaca.
-                                                                                    <p>
-                                                                                </li>
-                                                                                </li>
-                                                                            </ul>
-                                                                            </li>
+
                                                                         </form>
-                                                                        <br>
                                                                     @endif
                                                                     </li>
                                                                     </ul>
 
                                                                     </p>
                                                                     <p class="pl-3"
-                                                                        style="padding-top: 1.5rem;text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 16px; margin-left: 5%; color: #ffffff; text-align: justify;">
+                                                                        style="padding-top: 1.5rem;text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 16px; padding-left: 1rem;padding-right: 1rem; color: #535353; text-align: justify;">
                                                                         Sebagai pendaftar beasiswa, kamu perlu
                                                                         ingat bahwa sainganmu tidaklah sedikit
                                                                         sehingga
@@ -865,106 +777,104 @@
                                                                         good
                                                                         luck!
                                                                     </p>
+                                                                    <br>
+                                                                    <hr>
                                                                 </td>
                                                             </tr>
                                                         </table>
+
                                                         <!-- Inner table - right image -->
                                                     </td>
                                                 </tr>
                                             </table>
                                         </td>
                                     </tr>
+
                                 </table>
 
-                                <!-- Important Dates section title and text -->
-                                <table cellpadding="0" cellspacing="0" width="100%" border="0" align="right"
-                                    class="width100"
-                                    style="border-left:1px solid #1C274A; border-right:1px solid #1C274A;">
-
+                                <table cellpadding="0" cellspacing="0" align="center" class="width100 non-blur"
+                                    border="0"
+                                    style="margin: 0 ;width:100%;border-spacing: 0; border-collapse: collapse; border-left:1px solid #1C274A; border-right:1px solid #1C274A;">
                                     <tr>
-                                        <td>
-
-                                            <!-- Inner table - left image -->
-                                            <table
-                                                style="margin-right: -10px; margin-bottom: 5% !important; padding-left: 2%;"
-                                                cellpadding="0" cellspacing="0" width="90%" border="0"
-                                                align="left" class="width100">
-
-                                                <table cellpadding="0" cellspacing="0" align="center"
-                                                    class="width100 non-blur" border="0"
-                                                    style="margin: 0 ;width:100%;border-spacing: 0; border-collapse: collapse;">
-                                                    <tr>
-                                                        <td style="line-height: 24px; font-size: 16px; margin: 0;"
-                                                            align="center">
-                                                            <div width="90%" class="footer-bg"
-                                                                style=" color: #007bff; text-decoration: none; background-color: transparent; padding-top:2em;"
-                                                                align="center">
-                                                                <div style="border-spacing: 0; border-collapse: collapse; color: #007bff;background: rgb(255, 255, 255) !important; padding: 1em 0;"
-                                                                    align="center">
-                                                                    <img class="footer"
-                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/ALLIN-LOGO-NEW-1.png"
-                                                                        style="width: 25%; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; align-items: center;border-style: none; border-width: 0;">
-                                                                    <h3 class="footer-title"
-                                                                        style="width: 80%;text-align: center; font-family: Arial,Helvetica,sans-serif; font-weight: 300; font-size: 16px; color: #233872;">
-                                                                        Here in ALL-in Eduspace, we can help you explore
-                                                                        your passion to choose the right major and map
-                                                                        out the path to your dream university.
-                                                                    </h3>
-                                                                    <h3
-                                                                        style="width: 80%;text-align: center; font-family: Arial,Helvetica,sans-serif; font-weight: 700; font-size: 16px; color: #EEAB58;">
-                                                                        Have a chit-chat with us!
-                                                                    </h3>
-                                                                    <a href="https://all-inedu.com/sign-me/"
-                                                                        class="read-more"
-                                                                        style="box-sizing: border-box; border-radius: .5em; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.15; overflow: visible; text-transform: none; -webkit-appearance: button; background-color: #eeab58; color: #fff; font-weight: 400; margin: 0; padding: 0.4em 1em; border-style: none;text-decoration: none;">
-                                                                        Book an Initial Consultation
-                                                                    </a>
-                                                                    <table style="width: 25%;">
-                                                                        <tr valign="middle">
-                                                                            <td>
-                                                                                <a
-                                                                                    href="www.instagram.com/allineduspace/">
-                                                                                    <img style="width: 100%;"
-                                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/akar-icons_instagram-fill.png" />
-                                                                                </a>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a
-                                                                                    href="https://www.youtube.com/channel/UCLZ0P-RRdr7k5j2dxhNlObg">
-                                                                                    <img style="width: 100%;"
-                                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/akar-icons_whatsapp-fill.png" />
-                                                                                </a>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a
-                                                                                    href="https://linktr.ee/allineduspacecontact">
-                                                                                    <img style="width: 100%;"
-                                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/akar-icons_youtube-fill.png" />
-                                                                                </a>
-                                                                            </td>
-                                                                            <td>
-                                                                                <a href="https://all-inedu.com/">
-                                                                                    <img style="width: 100%;"
-                                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/mdi_web.png" />
-                                                                                </a>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </table>
-                                                                    {{-- <a href="{$unsubscribe}"
-                                                                        style="font-size: 10px;">Unsubscribe</a> --}}
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <!-- Inner table - right image -->
-                                            </table>
+                                        <td style="line-height: 24px; font-size: 16px; margin: 0;" align="center">
+                                            <div width="90%" class="footer-bg"
+                                                style=" color: #007bff; text-decoration: none; background-color: transparent;"
+                                                align="center">
+                                                <div style="border-spacing: 0; border-collapse: collapse; color: #007bff;background: rgb(255, 255, 255) !important; padding: 1em 0;"
+                                                    align="center">
+                                                    <img class="footer"
+                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/ALLIN-LOGO-NEW-1.png"
+                                                        style="width: 25%; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; align-items: center;border-style: none; border-width: 0;">
+                                                    <h3 class="footer-title"
+                                                        style="width: 80%;text-align: center; font-family: Arial,Helvetica,sans-serif; font-weight: 300; font-size: 16px; color: #233872;">
+                                                        Here in ALL-in Eduspace, we can help you explore
+                                                        your passion to choose the right major and map
+                                                        out the path to your dream university.
+                                                    </h3>
+                                                    <h3
+                                                        style="width: 80%;text-align: center; font-family: Arial,Helvetica,sans-serif; font-weight: 700; font-size: 16px; color: #EEAB58;">
+                                                        Have a chit-chat with us!
+                                                    </h3>
+                                                    <a href="https://all-inedu.com/sign-me/" class="read-more"
+                                                        style="box-sizing: border-box; border-radius: .5em; font-family: Arial,Helvetica,sans-serif; font-size: 14px; line-height: 1.15; overflow: visible; text-transform: none; -webkit-appearance: button; background-color: #eeab58; color: #fff; font-weight: 400; margin: 0; padding: 0.4em 1em; border-style: none;text-decoration: none;">
+                                                        Book an Initial Consultation
+                                                    </a>
+                                                    <table style="width: 25%;">
+                                                        <tr valign="middle">
+                                                            <td>
+                                                                <a href="www.instagram.com/allineduspace/">
+                                                                    <img style="width: 100%;"
+                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/akar-icons_instagram-fill.png" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <a
+                                                                    href="https://www.youtube.com/channel/UCLZ0P-RRdr7k5j2dxhNlObg">
+                                                                    <img style="width: 100%;"
+                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/akar-icons_whatsapp-fill.png" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <a href="https://linktr.ee/allineduspacecontact">
+                                                                    <img style="width: 100%;"
+                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/akar-icons_youtube-fill.png" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <a href="https://all-inedu.com/">
+                                                                    <img style="width: 100%;"
+                                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/mdi_web.png" />
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    {{-- <a href="{$unsubscribe}"
+                                                        style="font-size: 10px;">Unsubscribe</a> --}}
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </table>
+                                <!-- Important Dates section title and text -->
+                                {{-- <table cellpadding="0" cellspacing="0" width="100%" border="0" align="right"
+                                    class="width100"
+                                    style="border-left:1px solid #1C274A; border-right:1px solid #1C274A; background:#1C274A">
+                                    <tr>
+                                        <!-- Inner table - left image -->
+                                        <table
+                                            style="margin-right: -10px; margin-bottom: 5% !important; padding-left: 2%;"
+                                            cellpadding="0" cellspacing="0" width="90%" border="0"
+                                            align="left" class="width100">
+                                            <!-- Inner table - right image -->
+                                        </table>
+                                    </tr>
+                                </table> --}}
                             </td>
                         </tr>
                     </table>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 

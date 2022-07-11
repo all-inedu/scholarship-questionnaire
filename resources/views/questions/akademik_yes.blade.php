@@ -1,6 +1,10 @@
 @extends('utama.header')
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
 @section('content')
+    {{-- <pre>
+    {{ print_r($yes_decision, true) }}
+</pre>
+    {{ exit() }} --}}
     <div class="container body-color">
         <div class="row justify-content-center">
             <div class="col-md-8 ">
@@ -17,6 +21,7 @@
                         @csrf
                         <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" />
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="0" />
                             <input type="hidden" name="category[0]" value="academic" />
                             <input type="hidden" name="questions_number[0]" value="2" />
                             <p class="quiz-form__question">
@@ -24,25 +29,27 @@
                             </p>
                             <label class="quiz-form__ans" for="q11">
                                 <input required type="radio" name="answer[0]" id="q11" value="6"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[0]['answer'] == '6' ? 'checked' : '') }} />
+                                    @if ($yes_decision)  @endif
+                                    {{ $retVal = !isset($yes_decision[0]) ? '' : ($yes_decision[0]['answer'] == '6' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Selalu berada dalam top 5% </span>
                             </label>
                             <label class="quiz-form__ans" for="q12">
                                 <input required type="radio" name="answer[0]" id="q12" value="4"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[0]['answer'] == '4' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[0]) ? '' : ($yes_decision[0]['answer'] == '4' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Selalu berada dalam top 10% </span>
                             </label>
                             <label class="quiz-form__ans" for="q13">
                                 <input required type="radio" name="answer[0]" id="q13" value="3"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[0]['answer'] == '3' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[0]) ? '' : ($yes_decision[0]['answer'] == '3' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Selalu berada dalam top 15% </span>
                             </label>
                         </div>
 
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="1" />
                             <input type="hidden" name="category[1]" value="academic" />
                             <input type="hidden" name="questions_number[1]" value="3" />
                             <p class="quiz-form__question">
@@ -50,31 +57,31 @@
                             </p>
                             <label class="quiz-form__ans" for="q14">
                                 <input required type="radio" name="answer[1]" id="q14" value="0"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[1]['answer'] == '0' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[1]) ? '' : ($yes_decision[1]['answer'] == '0' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">&lt; 70</span>
                             </label>
                             <label class="quiz-form__ans" for="q15">
                                 <input required type="radio" name="answer[1]" id="q15" value="2"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[1]['answer'] == '2' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[1]) ? '' : ($yes_decision[1]['answer'] == '2' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">&gt; 70</span>
                             </label>
                             <label class="quiz-form__ans" for="q16">
                                 <input required type="radio" name="answer[1]" id="q16" value="3"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[1]['answer'] == '3' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[1]) ? '' : ($yes_decision[1]['answer'] == '3' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">&gt; 80</span>
                             </label>
                             <label class="quiz-form__ans" for="q17">
                                 <input required type="radio" name="answer[1]" id="q17" value="6"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[1]['answer'] == '6' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[1]) ? '' : ($yes_decision[1]['answer'] == '6' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">&gt; 90</span>
                             </label>
                         </div>
 
-                        <div class="quiz-form__quiz">
+                        {{-- <div class="quiz-form__quiz">
                             <input type="hidden" name="category[2]" value="academic" />
                             <input type="hidden" name="questions_number[2]" value="4" />
                             <p class="quiz-form__question">
@@ -115,7 +122,7 @@
                                 <span class="design"></span>
                                 <span class="text">Belum</span>
                             </label>
-                        </div>
+                        </div> --}}
 
                         <div class="row tombol">
                             <div class="col-md-12">
@@ -129,4 +136,41 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $("input[type=radio]").each(function() {
+            $(this).on('change', function() {
+
+                var number = $(this).closest('.quiz-form__quiz').find(
+                    'input[name="number"]').val()
+                alert(number);
+                $.ajax({
+                    type: "post",
+                    url: "{{ URL::to('/akademik_yes_session') }}",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        number: number,
+                        answer: $(this).val(),
+                        id_guest: $('input[name="id_guest"]').val(),
+
+                        questions_number: $(this).closest('.quiz-form__quiz').find(
+                            'input[name="questions_number[' + number + ']"]').val(),
+
+                        category: $(this).closest('.quiz-form__quiz').find(
+                            'input[name="category[' + number + ']"]').val(),
+                    },
+                    success: function(result) {
+                        console.log(result);
+                    },
+                    error: function(data, textStatus, errorThrown) {
+                        console.log(errorThrown);
+
+                    },
+
+                });
+            })
+        })
+    </script>
 @endsection

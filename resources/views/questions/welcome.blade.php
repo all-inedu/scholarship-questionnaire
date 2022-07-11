@@ -48,3 +48,69 @@
         </div>
     </div>
 @endsection
+@section('script')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $("input[type=radio]").each(function() {
+            $(this).on('change', function() {
+                alert($(this).val());
+
+                $.ajax({
+                    type: "post",
+                    url: "{{ URL::to('/akademiksession') }}",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        answer: $(this).val(),
+                        id_guest: $('input[name="id_guest"]').val(),
+                        questions_number: $('input[name="questions_number"]').val(),
+                        category: $('input[name="category"]').val(),
+                    },
+                    success: function(result) {
+                        console.log(result);
+                    },
+                    error: function(data, textStatus, errorThrown) {
+                        console.log(data);
+
+                    },
+
+                });
+            })
+        })
+    </script>
+@endsection
+{{-- <script>
+    $("input[type=radio]").each(function() {
+        $(this).on('change', function() {
+            alert($(this).val())
+        })
+    })
+
+    // $.ajaxSetup({
+                //     headers: {
+                //         'X-CSSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                //     }
+                // });
+</script> --}}
+
+
+
+{{-- <script>
+    $("input[type=radio]").each(function() {
+        $(this).on('change', function() {
+            alert($(this).val());
+            $.ajax({
+                type: "post",
+                url: "{{ URL::to('/akademiksession') }}",
+                data: {
+                    category: $(this).val(),
+                    id_guest: $('input[name="id_guest"]').val(),
+                    questions_number: $('input[name="questions_number"]').val(),
+                    answer: $('input[name="answer"]').val(),
+                },
+                success: function(result) {
+                    console.log(result);
+                }
+            });
+        })
+    })
+</script> --}}

@@ -141,7 +141,7 @@ class AnswerController extends Controller
         $jawaban = TblAnswer::where('id_guest' ,'=', $guest_id)->with('guestss')->first();
         // dd($hasil);
         
-        return view('result.result_answer', compact('bbb','academic','aktivitas','prestasi','personal_brand','komunikasi','jawaban'));
+        return view('email.mailing', compact('bbb','academic','aktivitas','prestasi','personal_brand','komunikasi','jawaban'));
     }
 
     /**
@@ -152,6 +152,20 @@ class AnswerController extends Controller
      */
     public function akademik(Request $request)
     {
+
+        // dd($validatedData);
+        if($request->answer =='Yes'){
+            return redirect('/akademik_yes_view');
+        }
+        else{
+            return redirect('/akademik_no_view');
+        }
+    }
+
+    public function akademiksession(Request $request)
+    {
+
+        // return $request;
 
         $validatedData = $request->validate([
             'id_guest'          => 'required',
@@ -169,22 +183,19 @@ class AnswerController extends Controller
             // dd($akademik_no[$i]);
             $arrr[]=$decision;
         
+            
         
             if(empty($request->session()->get('decision'))){
                 $akademik_decision = new TblAnswer();
                 $akademik_decision->fill($validatedData);
                 $request->session()->put('decision', $validatedData);
+                return false;
             }else{
                 $request->session()->put('decision', $validatedData);
+                return true;
             }
 
-        // dd($validatedData);
-        if($request->answer =='Yes'){
-            return redirect('/akademik_yes_view');
-        }
-        else{
-            return redirect('/akademik_no_view');
-        }
+        
     }
     /**
      * Store a newly created resource in storage.
@@ -192,7 +203,15 @@ class AnswerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function akademik_yes(Request $request)
+    {
+            return redirect('/soal_aktivitas');
+        
+    }
+
+    public function akademik_yes_session(Request $request)
     {
         $request->validate([
             // 'id_guest'          => 'required',
@@ -201,32 +220,47 @@ class AnswerController extends Controller
             'answer'            => 'required',
         ]);
         
-        $arrr = array();
+        $decision = Session::get('yes_decision')== null ?  [] :  Session::get('yes_decision');
 
-        for ($i = 0; $i < count($request->answer); $i++) {
-            $akademik_yes = new TblAnswer;
-            // $akademik_yes->id_guest           = $request->id_guest;
-            $akademik_yes->category           = $request->category[$i];
-            $akademik_yes->questions_number   = $request->questions_number[$i];
-            $akademik_yes->answer             = $request->answer[$i];
-            // dd($akademik_no[$i]);
-            $arrr[]=$akademik_yes;
-        }
+        $arrr = array();
         
-            if(empty($request->session()->get('yes_decision'))){
+
+        // for ($i = 0; $i < count($request->answer); $i++) {
+            // $akademik_yes = new TblAnswer;
+            // $akademik_yes->id_guest           = $request->id_guest;
+            // $akademik_yes->category           = $request->category;
+            // $akademik_yes->questions_number   = $request->questions_number;
+            // $akademik_yes->answer             = $request->answer;
+            $nomor = $request->number;
+            // dd($akademik_no[$i]);
+            $arrr[$nomor] = array(
+                "id_guest" => $request->id_guest,
+                "category" => $request->category,
+                "questions_number" => $request->questions_number,
+                "answer" => $request->answer,
+                );
+            // $arrr=(array)$akademik_yes;
+            $jawaban = $request->session()->get('yes_decision');
+            unset($jawaban[$nomor]);
+            $arr = array_merge($decision,$arrr);
+
+            // return $arr;
+        // }
+        // dd($arr);
+            if(empty($request->session()->get('yes_decision')[$nomor])){
                 $yes_decision = new TblAnswer();
-                $yes_decision->fill($arrr);
-                $request->session()->put('yes_decision', $arrr);
+                $yes_decision->fill($arr);
+                $request->session()->put('yes_decision', $arr);
             }else{
                 // $no_decision = $request->session()->get('no_decision');
                 // $no_decision->fill($arr);
-                $request->session()->put('yes_decision', $arrr);
+                $request->session()->put('yes_decision', $arr);
                 // dd($no_decision['answer'][0]);
             }
 
             session()->forget(['no_decision']);
         
-            return redirect('/soal_aktivitas');
+            // return redirect('/soal_aktivitas');
         
     }
     /**
@@ -453,7 +487,7 @@ class AnswerController extends Controller
             
             
             // dd($communication);
-            return redirect('/send_mail');
+            return redirect('/result_view');
     }
 
     /**
@@ -507,7 +541,7 @@ class AnswerController extends Controller
         Mail::send('email.mailing', $data, function($mail) use ($email_pengguna) {
             $mail->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
             $mail->to($email_pengguna->guestss->email);
-            $mail->subject('Result');
+            $mail->subject('Result Questionnaire');
         });
         // \Mail::to('faelantoniwijaya@gmail.com')->send(new MyTestMail($data));
         // dd("Email is Sent.....");

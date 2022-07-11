@@ -171,10 +171,11 @@
                                 @if ($aktivitas == 0)
                                     <form class="form-result">
                                         <br>
-                                        <p class="quiz-form__question"><b>Poin aktivitas/kegiatanmu belum menyentuh angka
-                                                minimum
-                                                dari
-                                                questionnaire ini, sehingga:</p>
+                                        <p class="quiz-form__question"><b>Poin aktivitas/kegiatanmu </b> belum menyentuh
+                                            angka
+                                            minimum
+                                            dari
+                                            questionnaire ini, sehingga:</p>
                                         <ul>
                                             <li class="quiz-form__question2">
                                                 <p>
@@ -220,6 +221,7 @@
                                             </li>
                                         </ul>
                                     </form>
+                                    <br>
                                 @endif
 
                                 @if ($personal_brand == 0)

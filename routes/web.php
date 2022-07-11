@@ -53,7 +53,9 @@ Route::post('guest', [GuestRegisterController::class, 'store']);
 
 //Simpan Jawaban Kategori Academic
 Route::post('akademik', [AnswerController::class, 'akademik']);
+Route::post('akademiksession', [AnswerController::class, 'akademiksession']);
 Route::post('akademik_yes', [AnswerController::class, 'akademik_yes']);
+Route::post('akademik_yes_session', [AnswerController::class, 'akademik_yes_session']);
 Route::post('akademik_no', [AnswerController::class, 'akademik_no']);
 //Simpan Jawaban Kategori Aktivitas
 Route::post('aktivitas', [AnswerController::class, 'aktivitas']);

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Questionnaire Scholarship</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- MATERIAL DESIGN ICONIC FONT -->
     <link rel="stylesheet"
@@ -25,7 +26,7 @@
     {{-- $(window).load(function(){}) --}}
     @yield('content')
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -35,7 +36,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous">
     </script>
-    @stack('script')
+
+    @yield('script')
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

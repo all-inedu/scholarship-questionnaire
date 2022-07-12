@@ -56,15 +56,20 @@ Route::post('akademik', [AnswerController::class, 'akademik']);
 Route::post('akademiksession', [AnswerController::class, 'akademiksession']);
 Route::post('akademik_yes', [AnswerController::class, 'akademik_yes']);
 Route::post('akademik_yes_session', [AnswerController::class, 'akademik_yes_session']);
+Route::post('akademik_no_session', [AnswerController::class, 'akademik_no_session']);
 Route::post('akademik_no', [AnswerController::class, 'akademik_no']);
 //Simpan Jawaban Kategori Aktivitas
 Route::post('aktivitas', [AnswerController::class, 'aktivitas']);
+Route::post('aktivitas_session', [AnswerController::class, 'aktivitas_session']);
 //Simpan Jawaban Kategori Prestasi
 Route::post('prestasi', [AnswerController::class, 'prestasi']);
+Route::post('prestasi_session', [AnswerController::class, 'prestasi_session']);
 //Simpan Jawaban Kategori Personal Brand
 Route::post('personal_brand', [AnswerController::class, 'personal_brand']);
+Route::post('personal_brand_session', [AnswerController::class, 'personal_brand_session']);
 //Simpan Jawaban Kategori Komunikasi
 Route::post('komunikasi', [AnswerController::class, 'komunikasi']);
+Route::post('komunikasi_session', [AnswerController::class, 'komunikasi_session']);
 //Simpan Result
 Route::post('result', [AnswerController::class, 'result']);
 //Simpan Konfirmasi

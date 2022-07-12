@@ -17,7 +17,7 @@ class AnswerController extends Controller
      */
     public function akademik_decision(Request $request)
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         
@@ -27,7 +27,7 @@ class AnswerController extends Controller
 
     public function akademik_yes_view(Request $request)
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         
@@ -37,7 +37,7 @@ class AnswerController extends Controller
     }
     public function akademik_no_view(Request $request)
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         
@@ -52,7 +52,7 @@ class AnswerController extends Controller
      */
     public function soal_aktivitas()
     {   
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         
@@ -70,7 +70,7 @@ class AnswerController extends Controller
      */
     public function soal_prestasi()
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         $prestasi = Session::get('prestasi');
@@ -84,7 +84,7 @@ class AnswerController extends Controller
      */
     public function soal_personal_brand()
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         $personal_branding = Session::get('personal_branding');
@@ -98,7 +98,7 @@ class AnswerController extends Controller
      */
     public function soal_komunikasi()
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         $decision = Session::get('decision');
@@ -119,7 +119,7 @@ class AnswerController extends Controller
      */
     public function result_view()
     {
-        if (!session()->exists('id_guest')) {
+        if (!session()->exists('register')) {
             return redirect('/');
         }
         $guest_id   = Session::get('id_guest');
@@ -141,7 +141,7 @@ class AnswerController extends Controller
         $jawaban = TblAnswer::where('id_guest' ,'=', $guest_id)->with('guestss')->first();
         // dd($hasil);
         
-        return view('email.mailing', compact('bbb','academic','aktivitas','prestasi','personal_brand','komunikasi','jawaban'));
+        return view('result.result_answer', compact('bbb','academic','aktivitas','prestasi','personal_brand','komunikasi','jawaban'));
     }
 
     /**
@@ -168,7 +168,7 @@ class AnswerController extends Controller
         // return $request;
 
         $validatedData = $request->validate([
-            'id_guest'          => 'required',
+            // 'id_guest'          => 'required',
             'category'          => 'required',
             'questions_number'  => 'required',
             'answer'            => 'required',
@@ -176,7 +176,7 @@ class AnswerController extends Controller
 
             $arrr = array();
             $decision = new TblAnswer;
-            $decision->id_guest           = $request->id_guest;
+            // $decision->id_guest           = $request->id_guest;
             $decision->category           = $request->category;
             $decision->questions_number   = $request->questions_number;
             $decision->answer             = $request->answer;
@@ -205,7 +205,7 @@ class AnswerController extends Controller
      */
 
 
-    public function akademik_yes(Request $request)
+    public function akademik_yes()
     {
             return redirect('/soal_aktivitas');
         
@@ -221,40 +221,46 @@ class AnswerController extends Controller
         ]);
         
         $decision = Session::get('yes_decision')== null ?  [] :  Session::get('yes_decision');
+        $nomor = $request->number;
 
-        $arrr = array();
-        
-
+        if (!empty($decision[$nomor])){
+            // unset($decision[$nomor]);
+            $decision[$nomor]=[];
+            $request->session()->put('yes_decision', $decision);
+        }
+        // $arrr = array();
+        // return $decision;
         // for ($i = 0; $i < count($request->answer); $i++) {
             // $akademik_yes = new TblAnswer;
             // $akademik_yes->id_guest           = $request->id_guest;
             // $akademik_yes->category           = $request->category;
             // $akademik_yes->questions_number   = $request->questions_number;
             // $akademik_yes->answer             = $request->answer;
-            $nomor = $request->number;
+            
             // dd($akademik_no[$i]);
-            $arrr[$nomor] = array(
-                "id_guest" => $request->id_guest,
+            $decision[$nomor] = array(
+                // "id_guest" => $request->id_guest,
                 "category" => $request->category,
                 "questions_number" => $request->questions_number,
                 "answer" => $request->answer,
                 );
             // $arrr=(array)$akademik_yes;
-            $jawaban = $request->session()->get('yes_decision');
-            unset($jawaban[$nomor]);
-            $arr = array_merge($decision,$arrr);
-
+            // $arr = array_merge($decision,$arrr);
+            
+            echo json_encode($decision);
             // return $arr;
         // }
         // dd($arr);
             if(empty($request->session()->get('yes_decision')[$nomor])){
                 $yes_decision = new TblAnswer();
-                $yes_decision->fill($arr);
-                $request->session()->put('yes_decision', $arr);
+                $yes_decision->fill($decision);
+                $request->session()->put('yes_decision', $decision);
             }else{
                 // $no_decision = $request->session()->get('no_decision');
                 // $no_decision->fill($arr);
-                $request->session()->put('yes_decision', $arr);
+                // $jawaban = $request->session()->get('yes_decision');
+                
+                $request->session()->put('yes_decision', $decision);
                 // dd($no_decision['answer'][0]);
             }
 
@@ -269,7 +275,13 @@ class AnswerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function akademik_no(Request $request)
+
+    public function akademik_no()
+    {
+            return redirect('/soal_aktivitas');
+    }
+
+    public function akademik_no_session(Request $request)
     {
         $request->validate([
             // 'id_guest'          => 'required',
@@ -278,31 +290,51 @@ class AnswerController extends Controller
             'answer'            => 'required',
         ]);
         
-        $arr = array();
+        $decision = Session::get('no_decision')== null ?  [] :  Session::get('no_decision');
+        $nomor = $request->number;
 
-        for ($i = 0; $i < count($request->answer); $i++) {
-            $akademik_no = new TblAnswer;
-            // $akademik_no->id_guest           = $request->id_guest;
-            $akademik_no->category           = $request->category[$i];
-            $akademik_no->questions_number   = $request->questions_number[$i];
-            $akademik_no->answer             = $request->answer[$i];
-            // dd($akademik_no[$i]);
-            $arr[]=$akademik_no;
+        if (!empty($decision[$nomor])){
+            // unset($decision[$nomor]);
+            $decision[$nomor]=[];
+            $request->session()->put('no_decision', $decision);
         }
+        // $arrr = array();
+        // return $decision;
+        // for ($i = 0; $i < count($request->answer); $i++) {
+            // $akademik_yes = new TblAnswer;
+            // $akademik_yes->id_guest           = $request->id_guest;
+            // $akademik_yes->category           = $request->category;
+            // $akademik_yes->questions_number   = $request->questions_number;
+            // $akademik_yes->answer             = $request->answer;
+            
+            // dd($akademik_no[$i]);
+            $decision[$nomor] = array(
+                // "id_guest" => $request->id_guest,
+                "category" => $request->category,
+                "questions_number" => $request->questions_number,
+                "answer" => $request->answer,
+                );
+            // $arrr=(array)$akademik_yes;
+            // $arr = array_merge($decision,$arrr);
+            
+            echo json_encode($decision);
+            // return $arr;
+        // }
         // dd($arr);
-            if(empty($request->session()->get('no_decision'))){
+            if(empty($request->session()->get('no_decision')[$nomor])){
                 $no_decision = new TblAnswer();
-                $no_decision->fill($arr);
-                $request->session()->put('no_decision', $arr);
+                $no_decision->fill($decision);
+                $request->session()->put('no_decision', $decision);
             }else{
-                $request->session()->put('no_decision', $arr);
+                // $no_decision = $request->session()->get('no_decision');
+                // $no_decision->fill($arr);
+                // $jawaban = $request->session()->get('yes_decision');
+                
+                $request->session()->put('no_decision', $decision);
                 // dd($no_decision['answer'][0]);
             }
 
-
-        session()->forget(['yes_decision']);
-        
-            return redirect('/soal_aktivitas');
+            session()->forget(['yes_decision']);
     }
 
     /**
@@ -311,7 +343,12 @@ class AnswerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function aktivitas(Request $request)
+    public function aktivitas()
+    {
+            return redirect('/soal_prestasi');
+    }
+
+    public function aktivitas_session(Request $request)
     {
         $request->validate([
             // 'id_guest'          => 'required',
@@ -320,28 +357,63 @@ class AnswerController extends Controller
             'answer'            => 'required',
         ]);
         
-        $arr = array();
+        $activities = Session::get('aktivitas')== null ?  [] :  Session::get('aktivitas');
+        $nomor = $request->number;
 
-        for ($i = 0; $i < count($request->answer); $i++) {
-            $activities = new TblAnswer;
-            // $activities->id_guest           = $request->id_guest;
-            $activities->category           = $request->category[$i];
-            $activities->questions_number   = $request->questions_number[$i];
-            $activities->answer             = $request->answer[$i];
-            // dd($activities[$i]);
-            $arr[]=$activities;
-            // dd($arr);
+        if (!empty($activities[$nomor])){
+            // unset($decision[$nomor]);
+            $activities[$nomor]=[];
+            $request->session()->put('aktivitas', $activities);
         }
-        
-            if(empty($request->session()->get('aktivitas'))){
+            $activities[$nomor] = array(
+                // "id_guest" => $request->id_guest,
+                "category" => $request->category,
+                "questions_number" => $request->questions_number,
+                "answer" => $request->answer,
+                );
+            echo json_encode($activities);
+
+            if(empty($request->session()->get('aktivitas')[$nomor])){
                 $aktivitas = new TblAnswer();
-                $aktivitas->fill($arr);
-                $request->session()->put('aktivitas', $arr);
+                $aktivitas->fill($activities);
+                $request->session()->put('aktivitas', $activities);
             }else{
-                $request->session()->put('aktivitas', $arr);
-                // dd($no_decision['answer'][0]);
+                $request->session()->put('aktivitas', $activities);
             }
-        return redirect('/soal_prestasi');
+
+
+
+
+
+        // $request->validate([
+        //     // 'id_guest'          => 'required',
+        //     'category'          => 'required',
+        //     'questions_number'  => 'required',
+        //     'answer'            => 'required',
+        // ]);
+        
+        // $arr = array();
+
+        // for ($i = 0; $i < count($request->answer); $i++) {
+        //     $activities = new TblAnswer;
+        //     // $activities->id_guest           = $request->id_guest;
+        //     $activities->category           = $request->category[$i];
+        //     $activities->questions_number   = $request->questions_number[$i];
+        //     $activities->answer             = $request->answer[$i];
+        //     // dd($activities[$i]);
+        //     $arr[]=$activities;
+        //     // dd($arr);
+        // }
+        
+        //     if(empty($request->session()->get('aktivitas'))){
+        //         $aktivitas = new TblAnswer();
+        //         $aktivitas->fill($arr);
+        //         $request->session()->put('aktivitas', $arr);
+        //     }else{
+        //         $request->session()->put('aktivitas', $arr);
+        //         // dd($no_decision['answer'][0]);
+        //     }
+        // return redirect('/soal_prestasi');
     }
 
     /**
@@ -350,46 +422,14 @@ class AnswerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function prestasi(Request $request)
+
+    public function prestasi()
     {
-        $request->validate([
-            // 'id_guest'          => 'required',
-            'category'          => 'required',
-            'questions_number'  => 'required',
-            'answer'            => 'required',
-        ]);
-        
-        $arr = array();
-
-        for ($i = 0; $i < count($request->answer); $i++) {
-            $prestasi = new TblAnswer;
-            // $prestasi->id_guest           = $request->id_guest;
-            $prestasi->category           = $request->category[$i];
-            $prestasi->questions_number   = $request->questions_number[$i];
-            $prestasi->answer             = $request->answer[$i];
-            // dd($prestasi);
-            $arr[]=$prestasi;
-            // dd($prestasi);
-        }
-        
-            if(empty($request->session()->get('prestasi'))){
-                $prestasi = new TblAnswer();
-                $prestasi->fill($arr);
-                $request->session()->put('prestasi', $arr);
-            }else{
-                $request->session()->put('prestasi', $arr);
-            }
-
             return redirect('/soal_personal_brand');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function personal_brand(Request $request)
+    
+    public function prestasi_session(Request $request)
     {
         $request->validate([
             // 'id_guest'          => 'required',
@@ -398,28 +438,108 @@ class AnswerController extends Controller
             'answer'            => 'required',
         ]);
         
-        $arr = array();
+        $prestasi = Session::get('prestasi')== null ?  [] :  Session::get('prestasi');
+        $nomor = $request->number;
 
-        for ($i = 0; $i < count($request->answer); $i++) {
-            $personal_brand = new TblAnswer;
-            // $personal_brand->id_guest           = $request->id_guest;
-            $personal_brand->category           = $request->category[$i];
-            $personal_brand->questions_number   = $request->questions_number[$i];
-            $personal_brand->answer             = $request->answer[$i];
-            // dd($akademik_no[$i]);
-            $arr[]=$personal_brand;
+        if (!empty($prestasi[$nomor])){
+            // unset($decision[$nomor]);
+            $prestasi[$nomor]=[];
+            $request->session()->put('prestasi', $prestasi);
         }
-        
-        
-            if(empty($request->session()->get('personal_branding'))){
-                $personal_branding = new TblAnswer();
-                $personal_branding->fill($arr);
-                $request->session()->put('personal_branding', $arr);
+            $prestasi[$nomor] = array(
+                // "id_guest" => $request->id_guest,
+                "category" => $request->category,
+                "questions_number" => $request->questions_number,
+                "answer" => $request->answer,
+                );
+            echo json_encode($prestasi);
+
+            if(empty($request->session()->get('prestasi')[$nomor])){
+                $aktivitas = new TblAnswer();
+                $aktivitas->fill($prestasi);
+                $request->session()->put('prestasi', $prestasi);
             }else{
-                $request->session()->put('personal_branding', $arr);
+                $request->session()->put('prestasi', $prestasi);
+            }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function personal_brand()
+    {
+            return redirect('/soal_komunikasi');
+    }
+
+    public function personal_brand_session(Request $request)
+    {
+        $request->validate([
+            // 'id_guest'          => 'required',
+            'category'          => 'required',
+            'questions_number'  => 'required',
+            'answer'            => 'required',
+        ]);
+        
+        $personal_brand = Session::get('personal_branding')== null ?  [] :  Session::get('personal_branding');
+        $nomor = $request->number;
+
+        if (!empty($personal_brand[$nomor])){
+            // unset($decision[$nomor]);
+            $personal_brand[$nomor]=[];
+            $request->session()->put('personal_branding', $personal_brand);
+        }
+            $personal_brand[$nomor] = array(
+                // "id_guest" => $request->id_guest,
+                "category" => $request->category,
+                "questions_number" => $request->questions_number,
+                "answer" => $request->answer,
+                );
+            echo json_encode($personal_brand);
+
+            if(empty($request->session()->get('personal_branding')[$nomor])){
+                $personal_branding = new TblAnswer();
+                $personal_branding->fill($personal_brand);
+                $request->session()->put('personal_branding', $personal_brand);
+            }else{
+                $request->session()->put('personal_branding', $personal_brand);
             }
 
-            return redirect('/soal_komunikasi');
+
+
+
+        // $request->validate([
+        //     // 'id_guest'          => 'required',
+        //     'category'          => 'required',
+        //     'questions_number'  => 'required',
+        //     'answer'            => 'required',
+        // ]);
+        
+        // $arr = array();
+
+        // for ($i = 0; $i < count($request->answer); $i++) {
+        //     $personal_brand = new TblAnswer;
+        //     // $personal_brand->id_guest           = $request->id_guest;
+        //     $personal_brand->category           = $request->category[$i];
+        //     $personal_brand->questions_number   = $request->questions_number[$i];
+        //     $personal_brand->answer             = $request->answer[$i];
+        //     // dd($akademik_no[$i]);
+        //     $arr[]=$personal_brand;
+        // }
+        
+        
+        //     if(empty($request->session()->get('personal_branding'))){
+        //         $personal_branding = new TblAnswer();
+        //         $personal_branding->fill($arr);
+        //         $request->session()->put('personal_branding', $arr);
+        //     }else{
+        //         $request->session()->put('personal_branding', $arr);
+        //     }
+
+        //     return redirect('/soal_komunikasi');
     }
     
 
@@ -429,7 +549,47 @@ class AnswerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function komunikasi(Request $request)
+    
+
+    public function komunikasi()
+    {
+
+        $guest = TblGuest::create(Session::get('register'));
+        Session::put('id_guest', $guest->id);
+
+        $akademic_decision = !empty(Session::get('no_decision')) ? Session::get('no_decision') : Session::get('yes_decision') ;
+
+        $array_session = [];
+
+        $array_session = array_merge(   
+            [Session::get('decision')],
+            $akademic_decision,
+            Session::get('aktivitas'),
+            Session::get('prestasi'),
+            Session::get('personal_branding'),
+            Session::get('komunikasi'),
+            Session::get('aktivitas'),
+            );
+        // $array_session = array_merge($array_session, $akademic_decision);
+        
+        for ($i = 0; $i < count($array_session); $i++) {
+            // $guest_id = Session::get('id_guest');
+            $communication = new TblAnswer;
+            $communication->id_guest           = $guest->id;
+            $communication->category           = $array_session[$i]['category'];
+            $communication->questions_number   = $array_session[$i]['questions_number'];
+            $communication->answer             = $array_session[$i]['answer'];
+            // dd($akademik_no[$i]);
+            // $arr[]=$communication;
+            $communication->save();
+        }
+        
+        
+        // dd($communication);
+        return redirect('/send_mail');
+    }
+
+    public function komunikasi_session(Request $request)
     {
         $request->validate([
             // 'id_guest'          => 'required',
@@ -438,56 +598,30 @@ class AnswerController extends Controller
             'answer'            => 'required',
         ]);
         
-        $arr = array();
+        $communication = Session::get('komunikasi')== null ?  [] :  Session::get('komunikasi');
+        $nomor = $request->number;
 
-        for ($i = 0; $i < count($request->answer); $i++) {
-            $communication = new TblAnswer;
-            // $communication->id_guest           = $request->id_guest;
-            $communication->category           = $request->category[$i];
-            $communication->questions_number   = $request->questions_number[$i];
-            $communication->answer             = $request->answer[$i];
-            // dd($akademik_no[$i]);
-            $arr[]=$communication;
+        if (!empty($communication[$nomor])){
+            // unset($decision[$nomor]);
+            $communication[$nomor]=[];
+            $request->session()->put('komunikasi', $communication);
         }
-        
-            if(empty($request->session()->get('komunikasi'))){
-                $komunikasi = new TblAnswer();
-                $komunikasi->fill($arr);
-                $request->session()->put('komunikasi', $arr);
-            }else{
-                $request->session()->put('komunikasi', $arr);
-            }
-            
-            $akademic_decision = !empty(Session::get('no_decision')) ? Session::get('no_decision') : Session::get('yes_decision') ;
-
-            $array_session = [];
-
-            $array_session = array_merge(   
-                [Session::get('decision')],
-                $akademic_decision,
-                Session::get('aktivitas'),
-                Session::get('prestasi'),
-                Session::get('personal_branding'),
-                Session::get('komunikasi'),
-                Session::get('aktivitas'),
+            $communication[$nomor] = array(
+                // "id_guest" => $request->id_guest,
+                "category" => $request->category,
+                "questions_number" => $request->questions_number,
+                "answer" => $request->answer,
                 );
-            // $array_session = array_merge($array_session, $akademic_decision);
-            
-            for ($i = 0; $i < count($array_session); $i++) {
-                $guest_id = Session::get('id_guest');
-                $communication = new TblAnswer;
-                $communication->id_guest           = $guest_id;
-                $communication->category           = $array_session[$i]['category'];
-                $communication->questions_number   = $array_session[$i]['questions_number'];
-                $communication->answer             = $array_session[$i]['answer'];
-                // dd($akademik_no[$i]);
-                // $arr[]=$communication;
-                $communication->save();
+            echo json_encode($communication);
+
+            if(empty($request->session()->get('komunikasi')[$nomor])){
+                $komunikasi = new TblAnswer();
+                $komunikasi->fill($communication);
+                $request->session()->put('komunikasi', $communication);
+            }else{
+                $request->session()->put('komunikasi', $communication);
             }
             
-            
-            // dd($communication);
-            return redirect('/result_view');
     }
 
     /**
@@ -506,6 +640,7 @@ class AnswerController extends Controller
 
     public function generatePDF()
     {
+        
         $guest_id   = Session::get('id_guest');
         $guest = TblGuest::get('id');
         
@@ -541,7 +676,7 @@ class AnswerController extends Controller
         Mail::send('email.mailing', $data, function($mail) use ($email_pengguna) {
             $mail->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'));
             $mail->to($email_pengguna->guestss->email);
-            $mail->subject('Result Questionnaire');
+            $mail->subject('Hasil All-In Kuesioner');
         });
         // \Mail::to('faelantoniwijaya@gmail.com')->send(new MyTestMail($data));
         // dd("Email is Sent.....");

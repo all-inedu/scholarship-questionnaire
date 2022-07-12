@@ -19,7 +19,7 @@
                 <div class="quiz">
                     <form method="POST" action="/akademik_yes">
                         @csrf
-                        <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" />
+                        {{-- <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" /> --}}
                         <div class="quiz-form__quiz">
                             <input type="hidden" name="number" value="0" />
                             <input type="hidden" name="category[0]" value="academic" />
@@ -81,7 +81,8 @@
                             </label>
                         </div>
 
-                        {{-- <div class="quiz-form__quiz">
+                        <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="2" />
                             <input type="hidden" name="category[2]" value="academic" />
                             <input type="hidden" name="questions_number[2]" value="4" />
                             <p class="quiz-form__question">
@@ -103,6 +104,7 @@
                         </div>
 
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="3" />
                             <input type="hidden" name="category[3]" value="academic" />
                             <input type="hidden" name="questions_number[3]" value="5" />
                             <p class="quiz-form__question">
@@ -122,7 +124,7 @@
                                 <span class="design"></span>
                                 <span class="text">Belum</span>
                             </label>
-                        </div> --}}
+                        </div>
 
                         <div class="row tombol">
                             <div class="col-md-12">
@@ -142,10 +144,12 @@
     <script>
         $("input[type=radio]").each(function() {
             $(this).on('change', function() {
-
                 var number = $(this).closest('.quiz-form__quiz').find(
-                    'input[name="number"]').val()
-                alert(number);
+                    'input[name="number"]').val();
+                var questions_number = $(this).closest('.quiz-form__quiz').find(
+                    'input[name="questions_number[' + number + ']"]').val();
+
+                // alert(questions_number);
                 $.ajax({
                     type: "post",
                     url: "{{ URL::to('/akademik_yes_session') }}",

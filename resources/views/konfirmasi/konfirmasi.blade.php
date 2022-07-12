@@ -227,7 +227,8 @@
                                 @if ($personal_brand == 0)
                                     <form class="form-result">
                                         <br>
-                                        <p class="quiz-form__question"><b>Poin prestasimu </b> belum menyentuh angka minimum
+                                        <p class="quiz-form__question"><b>Poin personal brandmu</b> belum menyentuh angka
+                                            minimum
                                             dari
                                             questionnaire ini, sehingga:</p>
                                         <ul>
@@ -285,7 +286,7 @@
                                 @if ($prestasi == 0)
                                     <form class="form-result">
                                         <br>
-                                        <p class="quiz-form__question"><b>Poin personal brandmu</b> belum menyentuh angka
+                                        <p class="quiz-form__question"><b>Poin prestasimu</b> belum menyentuh angka
                                             minimum
                                             dari
                                             questionnaire ini, sehingga:</p>

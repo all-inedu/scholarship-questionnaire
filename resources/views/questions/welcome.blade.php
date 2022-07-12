@@ -19,7 +19,7 @@
                             <p class="quiz-form__question">
                                 1. Apakah sekolahmu menggunakan sistem ranking?
                             </p>
-                            <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" />
+                            {{-- <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" /> --}}
                             <input type="hidden" name="category" value="academic" />
                             <input type="hidden" name="questions_number" value="1" />
                             <label class="quiz-form__ans" for="q11">
@@ -53,7 +53,7 @@
     <script>
         $("input[type=radio]").each(function() {
             $(this).on('change', function() {
-                alert($(this).val());
+                // alert($(this).val());
 
                 $.ajax({
                     type: "post",

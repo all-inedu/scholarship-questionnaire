@@ -47,14 +47,31 @@ class GuestRegisterController extends Controller
     {
         // $user = $request->session()->get('guest');
 
-
-        $request->validate([
+        $validatedData = $request->validate([
             'full_name'      => 'required|max:255',
             // 'email'          => 'required|unique:tbl_guests|email:rfc,dns',
             'email'          => 'required|email:rfc,dns',
             'school_name'    => 'required', 'string',
             'grade'          => 'required|max:255',
         ]);
+
+            $arrr = array();
+            $register = new TblGuest();
+            $register->full_name    = $request->full_name;
+            $register->email        = $request->email;
+            $register->school_name  = $request->school_name;
+            $register->grade        = $request->grade;
+            // dd($akademik_no[$i]);
+            $arrr[]=$register;
+        
+        
+            if(empty($request->session()->get('register'))){
+                $guest_register = new TblGuest();
+                $guest_register->fill($validatedData);
+                $request->session()->put('register', $validatedData);
+            }else{
+                $request->session()->put('register', $validatedData);
+            }
 
 
         // $check_user = false;
@@ -69,13 +86,13 @@ class GuestRegisterController extends Controller
             // $check_user = false;
             // $lihat_user = null;
             
-            $data = TblGuest::UpdateOrCreate([
-                'full_name'     => $request->full_name,
-                'email'         => $request->email,
-                'school_name'   => $request->school_name,
-                'grade'         => $request->grade
-            ]);
-            Session::put('id_guest', $data->id);
+            // $data = TblGuest::UpdateOrCreate([
+            //     'full_name'     => $request->full_name,
+            //     'email'         => $request->email,
+            //     'school_name'   => $request->school_name,
+            //     'grade'         => $request->grade
+            // ]);
+            // Session::put('id_guest', $data->id);
             return redirect('/akademik_decision');
         
         // dd($check_user,$lihat_user);

@@ -182,7 +182,7 @@
                                                     style="width: 100% !important;padding: 0.5rem!important;">
                                                     <div
                                                         style="text-align: center; color: #FFFFFF;font-family: Arial, Helvetica, sans-serif;font-size: 24px;margin-bottom: 0!important;font-weight:500;line-height: 1.2;margin-top: 0; display: block; width: 100%;">
-                                                        <b>Hasil Result Kamu</b>
+                                                        <b>Hasil Kuesioner Kamu</b>
                                                     </div>
                                                 </div>
                                             </div>
@@ -507,7 +507,8 @@
                                                                                         menyentuh
                                                                                         angka minimum
                                                                                         dari
-                                                                                        questionnaire ini, sehingga:</p>
+                                                                                        questionnaire ini, sehingga:
+                                                                                    </p>
                                                                                     <ul style="padding-left: 1rem;">
                                                                                         <li
                                                                                             class="quiz-form__question2">

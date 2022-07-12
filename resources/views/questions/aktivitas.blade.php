@@ -16,7 +16,8 @@
                     <form method="POST" action="/aktivitas">
                         @csrf
                         <div class="quiz-form__quiz">
-                            <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" />
+                            {{-- <input type="hidden" name="id_guest" value="{{ Session::get('id_guest') }}" /> --}}
+                            <input type="hidden" name="number" value="0" />
                             <input type="hidden" name="category[0]" value="aktivitas" />
                             <input type="hidden" name="questions_number[0]" value="1" />
                             <p class="quiz-form__question">
@@ -60,6 +61,7 @@
                         </div>
 
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="1" />
                             <input type="hidden" name="category[1]" value="aktivitas" />
                             <input type="hidden" name="questions_number[1]" value="2" />
                             <p class="quiz-form__question">
@@ -105,6 +107,7 @@
                         </div>
 
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="2" />
                             <input type="hidden" name="category[2]" value="aktivitas" />
                             <input type="hidden" name="questions_number[2]" value="3" />
                             <p class="quiz-form__question">
@@ -148,6 +151,7 @@
                         </div>
 
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="3" />
                             <input type="hidden" name="category[3]" value="aktivitas" />
                             <input type="hidden" name="questions_number[3]" value="4" />
                             <p class="quiz-form__question">
@@ -177,6 +181,7 @@
                         </div>
 
                         <div class="quiz-form__quiz">
+                            <input type="hidden" name="number" value="4" />
                             <input type="hidden" name="category[4]" value="aktivitas" />
                             <input type="hidden" name="questions_number[4]" value="5" />
                             <p class="quiz-form__question">
@@ -210,4 +215,43 @@
             </div>
         </div>
     </div>
+@endsection
+@section('script')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $("input[type=radio]").each(function() {
+            $(this).on('change', function() {
+                var number = $(this).closest('.quiz-form__quiz').find(
+                    'input[name="number"]').val();
+                var questions_number = $(this).closest('.quiz-form__quiz').find(
+                    'input[name="questions_number[' + number + ']"]').val();
+
+                // alert(questions_number);
+                $.ajax({
+                    type: "post",
+                    url: "{{ URL::to('/aktivitas_session') }}",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        number: number,
+                        answer: $(this).val(),
+                        id_guest: $('input[name="id_guest"]').val(),
+
+                        questions_number: $(this).closest('.quiz-form__quiz').find(
+                            'input[name="questions_number[' + number + ']"]').val(),
+
+                        category: $(this).closest('.quiz-form__quiz').find(
+                            'input[name="category[' + number + ']"]').val(),
+                    },
+                    success: function(result) {
+                        console.log(result);
+                    },
+                    error: function(data, textStatus, errorThrown) {
+                        console.log(errorThrown);
+
+                    },
+
+                });
+            })
+        })
+    </script>
 @endsection

@@ -553,6 +553,39 @@ class AnswerController extends Controller
 
     public function komunikasi()
     {
+        $old_guest = Session::get('old_guest');
+        if (isset($old_guest)) {
+            
+            TblAnswer::where('id_guest','=', $old_guest)->delete();
+            
+            $akademic_decision = !empty(Session::get('no_decision')) ? Session::get('no_decision') : Session::get('yes_decision') ;
+
+        $array_session = [];
+
+        $array_session = array_merge(   
+            [Session::get('decision')],
+            $akademic_decision,
+            Session::get('aktivitas'),
+            Session::get('prestasi'),
+            Session::get('personal_branding'),
+            Session::get('komunikasi'),
+            Session::get('aktivitas'),
+            );
+        // $array_session = array_merge($array_session, $akademic_decision);
+        
+        for ($i = 0; $i < count($array_session); $i++) {
+            // $guest_id = Session::get('id_guest');
+            $communication = new TblAnswer;
+            $communication->id_guest           = $old_guest;
+            $communication->category           = $array_session[$i]['category'];
+            $communication->questions_number   = $array_session[$i]['questions_number'];
+            $communication->answer             = $array_session[$i]['answer'];
+            // dd($akademik_no[$i]);
+            // $arr[]=$communication;
+            $communication->save();
+        }
+            return redirect('/send_mail');
+        }
 
         $guest_reg = Session::get('register');
         // return $guest_reg['email'];
@@ -641,8 +674,11 @@ class AnswerController extends Controller
      */
     public function konfirmasi_yes($id)
     {
+
+        Session::put('old_guest', $id);
         // $guest_id   = Session::get('id_guest');
-        TblAnswer::where('id_guest', $id)->delete();
+        // TblAnswer::where('id_guest', $id)->delete();
+
         // $post->delete();
         return redirect('/akademik_decision');
     }

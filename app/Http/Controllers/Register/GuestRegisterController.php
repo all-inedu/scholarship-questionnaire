@@ -135,7 +135,7 @@ class GuestRegisterController extends Controller
         $guest   = Session::get('register');
         $lihat_user = TblGuest::where('email', '=', $guest['email'])->first();
 
-        $guest_id   = $guest['id'];
+        $guest_id   = $lihat_user['id'];
         // $guest = TblGuest::get('id');
         
         $hasil      = TblAnswer::where('id_guest' ,'=', $guest_id)->sum('answer');
@@ -145,11 +145,11 @@ class GuestRegisterController extends Controller
             return $bb->sum('answer');
         });
         
-        $academic       = ($bbb['academic'] >= 15) ? 1 : 0 ;
-        $aktivitas      = ($bbb['aktivitas'] >= 20) ? 1 : 0 ;
-        $prestasi       = ($bbb['prestasi'] >= 15) ? 1 : 0 ;
-        $personal_brand = ($bbb['personal_brand'] >= 10) ? 1 : 0 ;
-        $komunikasi     = ($bbb['komunikasi'] >= 10) ? 1 : 0 ;
+        $academic       = isset($bbb['academic']) ? (($bbb['academic'] >= 15) ? 1 : 0) : 0 ;
+        $aktivitas      = isset($bbb['aktivitas']) ? (($bbb['aktivitas'] >= 20) ? 1 : 0) : 0 ;
+        $prestasi       = isset($bbb['prestasi']) ? (($bbb['prestasi'] >= 15) ? 1 : 0) : 0 ;
+        $personal_brand = isset($bbb['personal_brand']) ? (($bbb['personal_brand'] >= 10) ? 1 : 0) : 0 ;
+        $komunikasi     = isset($bbb['komunikasi']) ? (($bbb['komunikasi'] >= 10) ? 1 : 0) : 0 ;
 
         // dd($academic,$aktivitas,$prestasi ,$personal_brand,$komunikasi , $aaa, $bbb, $hasil);
         $jawaban = TblAnswer::where('id_guest' ,'=', $guest_id)->with('guestss')->first();

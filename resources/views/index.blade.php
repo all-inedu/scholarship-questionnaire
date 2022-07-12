@@ -18,7 +18,8 @@
                             <div class="form-holder">
                                 <i class="zmdi zmdi-account-o"></i>
                                 <input type="text" name="full_name" @error('full_name') is-invalid @enderror
-                                    class="form-control-satu" value="{{ old('full_name', $guest->full_name ?? null) }}">
+                                    class="form-control-satu" value="{{ old('full_name', $guest->full_name ?? null) }}"
+                                    required>
                             </div>
                             @error('full_name')
                                 <div class="invalid-feedback" role="alert">
@@ -32,7 +33,7 @@
                             <div class="form-holder">
                                 <i style="font-style: normal; font-size: 15px;">@</i>
                                 <input type="text" name="email" @error('email') is-invalid @enderror
-                                    class="form-control-satu" value="{{ old('email') }}">
+                                    class="form-control-satu" value="{{ old('email') }}" required>
                             </div>
                             @error('email')
                                 <div class="invalid-feedback" role="alert">
@@ -50,7 +51,7 @@
                                                 <i class="zmdi zmdi-graduation-cap"></i>
                                                 <input type="text" @error('school_name') is-invalid @enderror
                                                     name="school_name" class="form-control-satu"
-                                                    value="{{ old('school_name') }}">
+                                                    value="{{ old('school_name') }}" required>
                                             </div>
                                             @error('school_name')
                                                 <div class="invalid-feedback" role="alert">
@@ -64,7 +65,7 @@
                                             <label for="">Grade:</label>
                                             <div class="form-holder select">
                                                 <select name="grade" id="" @error('grade') is-invalid @enderror
-                                                    value="{{ old('grade') }}" class="form-control-satu">
+                                                    value="{{ old('grade') }}" class="form-control-satu" required>
                                                     <option selected disabled value="">Choose...</option>
                                                     <option value="7">7</option>
                                                     <option value="8">8</option>

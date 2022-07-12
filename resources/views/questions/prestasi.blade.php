@@ -25,14 +25,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q11">
                                 <input type="radio" name="answer[0]" id="q11" value="2"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[0]['answer'] == '2' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[0]) ? '' : ($prestasi[0]['answer'] == '2' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Pernah</span>
                             </label>
                             <label class="quiz-form__ans" for="q12">
                                 <input type="radio" name="answer[0]" id="q12" value="0"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[0]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[0]) ? '' : ($prestasi[0]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Belum Pernah</span>
@@ -48,14 +48,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q16">
                                 <input type="radio" name="answer[1]" id="q16" value="3"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[1]['answer'] == '3' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[1]) ? '' : ($prestasi[1]['answer'] == '3' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Pernah</span>
                             </label>
                             <label class="quiz-form__ans" for="q17">
                                 <input type="radio" name="answer[1]" id="q17" value="0"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[1]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[1]) ? '' : ($prestasi[1]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Belum Pernah</span>
@@ -71,14 +71,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q21">
                                 <input type="radio" name="answer[2]" id="q21" value="5"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[2]['answer'] == '5' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[2]) ? '' : ($prestasi[2]['answer'] == '5' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Pernah</span>
                             </label>
                             <label class="quiz-form__ans" for="q22">
                                 <input type="radio" name="answer[2]" id="q22" value="0"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[2]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[2]) ? '' : ($prestasi[2]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Belum Pernah</span>
@@ -94,14 +94,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q26">
                                 <input type="radio" name="answer[3]" id="q26" value="5"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[3]['answer'] == '5' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[3]) ? '' : ($prestasi[3]['answer'] == '5' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Pernah</span>
                             </label>
                             <label class="quiz-form__ans" for="q27">
                                 <input type="radio" name="answer[3]" id="q27" value="0"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[3]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[3]) ? '' : ($prestasi[3]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Belum Pernah</span>
@@ -117,14 +117,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q29">
                                 <input type="radio" name="answer[4]" id="q29" value="10"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[4]['answer'] == '10' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[4]) ? '' : ($prestasi[4]['answer'] == '10' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Pernah</span>
                             </label>
                             <label class="quiz-form__ans" for="q30">
                                 <input type="radio" name="answer[4]" id="q30" value="0"
-                                    {{ $retVal = !isset($prestasi) ? '' : ($prestasi[4]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($prestasi[4]) ? '' : ($prestasi[4]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Belum Pernah</span>

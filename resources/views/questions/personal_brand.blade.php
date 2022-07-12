@@ -26,14 +26,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q11">
                                 <input type="radio" name="answer[0]" id="q11" value="2"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[0]['answer'] == '2' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[0]) ? '' : ($personal_branding[0]['answer'] == '2' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Iya</span>
                             </label>
                             <label class="quiz-form__ans" for="q12">
                                 <input type="radio" name="answer[0]" id="q12" value="0"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[0]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[0]) ? '' : ($personal_branding[0]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Tidak</span>
@@ -49,14 +49,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q16">
                                 <input type="radio" name="answer[1]" id="q16" value="4"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[1]['answer'] == '4' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[1]) ? '' : ($personal_branding[1]['answer'] == '4' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Iya</span>
                             </label>
                             <label class="quiz-form__ans" for="q17">
                                 <input type="radio" name="answer[1]" id="q17" value="0"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[1]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[1]) ? '' : ($personal_branding[1]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Tidak</span>
@@ -72,14 +72,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q21">
                                 <input type="radio" name="answer[2]" id="q21" value="2"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[2]['answer'] == '2' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[2]) ? '' : ($personal_branding[2]['answer'] == '2' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Iya</span>
                             </label>
                             <label class="quiz-form__ans" for="q22">
                                 <input type="radio" name="answer[2]" id="q22" value="0"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[2]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[2]) ? '' : ($personal_branding[2]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Tidak</span>
@@ -95,14 +95,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q26">
                                 <input type="radio" name="answer[3]" id="q26" value="2"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[3]['answer'] == '2' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[3]) ? '' : ($personal_branding[3]['answer'] == '2' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Iya</span>
                             </label>
                             <label class="quiz-form__ans" for="q27">
                                 <input type="radio" name="answer[3]" id="q27" value="0"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[3]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[3]) ? '' : ($personal_branding[3]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Tidak</span>
@@ -120,14 +120,14 @@
                             </p>
                             <label class="quiz-form__ans" for="q29">
                                 <input type="radio" name="answer[4]" id="q29" value="5"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[4]['answer'] == '5' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[4]) ? '' : ($personal_branding[4]['answer'] == '5' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Iya</span>
                             </label>
                             <label class="quiz-form__ans" for="q30">
                                 <input type="radio" name="answer[4]" id="q30" value="0"
-                                    {{ $retVal = !isset($personal_branding) ? '' : ($personal_branding[4]['answer'] == '0' ? 'checked' : '') }}
+                                    {{ $retVal = !isset($personal_branding[4]) ? '' : ($personal_branding[4]['answer'] == '0' ? 'checked' : '') }}
                                     required />
                                 <span class="design"></span>
                                 <span class="text">Tidak</span>

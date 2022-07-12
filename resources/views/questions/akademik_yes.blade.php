@@ -91,13 +91,13 @@
                             </p>
                             <label class="quiz-form__ans" for="q18">
                                 <input required type="radio" name="answer[2]" id="q18" value="5"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[2]['answer'] == '5' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[2]) ? '' : ($yes_decision[2]['answer'] == '5' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Dari tahun pertama hingga tahun terakhir </span>
                             </label>
                             <label class="quiz-form__ans" for="q19">
                                 <input required type="radio" name="answer[2]" id="q19" value="0"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[2]['answer'] == '0' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[2]) ? '' : ($yes_decision[2]['answer'] == '0' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Ada nilai yang turun dari semester/tahun sebelumnya </span>
                             </label>
@@ -114,13 +114,13 @@
                             </p>
                             <label class="quiz-form__ans" for="q20">
                                 <input required type="radio" name="answer[3]" id="q20" value="3"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[3]['answer'] == '3' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[3]) ? '' : ($yes_decision[3]['answer'] == '3' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Sudah</span>
                             </label>
                             <label class="quiz-form__ans" for="q21">
                                 <input required type="radio" name="answer[3]" id="q21" value="0"
-                                    {{ $retVal = !isset($yes_decision) ? '' : ($yes_decision[3]['answer'] == '0' ? 'checked' : '') }} />
+                                    {{ $retVal = !isset($yes_decision[3]) ? '' : ($yes_decision[3]['answer'] == '0' ? 'checked' : '') }} />
                                 <span class="design"></span>
                                 <span class="text">Belum</span>
                             </label>

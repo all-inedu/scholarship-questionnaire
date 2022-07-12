@@ -554,8 +554,17 @@ class AnswerController extends Controller
     public function komunikasi()
     {
 
-        $guest = TblGuest::create(Session::get('register'));
-        Session::put('id_guest', $guest->id);
+        $guest_reg = Session::get('register');
+        // return $guest_reg['email'];
+        if (!$find = TblGuest::where('email', '=', $guest_reg['email'])->first()) {
+            $guest = TblGuest::create(Session::get('register'));
+            $id = $guest->id;
+            Session::put('id_guest', $guest->id);
+        }else{
+        $id = $find->id;
+        Session::put('id_guest', $find->id);
+        }
+
 
         $akademic_decision = !empty(Session::get('no_decision')) ? Session::get('no_decision') : Session::get('yes_decision') ;
 
@@ -575,7 +584,7 @@ class AnswerController extends Controller
         for ($i = 0; $i < count($array_session); $i++) {
             // $guest_id = Session::get('id_guest');
             $communication = new TblAnswer;
-            $communication->id_guest           = $guest->id;
+            $communication->id_guest           = $id;
             $communication->category           = $array_session[$i]['category'];
             $communication->questions_number   = $array_session[$i]['questions_number'];
             $communication->answer             = $array_session[$i]['answer'];

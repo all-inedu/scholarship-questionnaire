@@ -132,11 +132,11 @@ class GuestRegisterController extends Controller
      */
     public function konfirmasi(Request $request)
     {
-        $guest_id   = Session::get('id_guest');
-        $lihat_user = TblGuest::where('id', '=', $guest_id)->first();
+        $guest   = Session::get('register');
+        $lihat_user = TblGuest::where('email', '=', $guest['email'])->first();
 
-        $guest_id   = Session::get('id_guest');
-        $guest = TblGuest::get('id');
+        $guest_id   = $guest['id'];
+        // $guest = TblGuest::get('id');
         
         $hasil      = TblAnswer::where('id_guest' ,'=', $guest_id)->sum('answer');
         $category1  = TblAnswer::where('id_guest' ,'=', $guest_id)->get();

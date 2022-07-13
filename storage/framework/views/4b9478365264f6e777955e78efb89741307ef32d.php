@@ -79,330 +79,332 @@
                                         </p>
                                     </form>
                                 <?php endif; ?>
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>
+                            <?php if($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1): ?>
+                                <form class="form-result">
 
-                                <?php if($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1): ?>
-                                    <form class="form-result">
+                                    <p class="quiz-form__question">Namun, akan lebih maksimal apabila kamu tetap
+                                        mengembangkan
+                                        profil
+                                        kamu menyesuaikan dengan
+                                        kriteria-kriteria beasiswa yang akan kamu daftarkan, seperti:</p>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Mempersiapkan nilai yang baik untuk tes standarisasi (SAT/ACT/IB Level/A
+                                                Level/EJU/sejenisnya).
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Mempersiapkan nilai yang baik untuk tes bahasa (TOEFL, IELTS, TELC,
+                                                JLPT, dan
+                                                sejenisnya).
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Mempersiapkan essay yang baik, kreatif, dan menarik.
+                                            </p>
+                                        </li>
+                                    </ul>
 
-                                        <p class="quiz-form__question">Namun, akan lebih maksimal apabila kamu tetap
-                                            mengembangkan
-                                            profil
-                                            kamu menyesuaikan dengan
-                                            kriteria-kriteria beasiswa yang akan kamu daftarkan, seperti:</p>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Mempersiapkan nilai yang baik untuk tes standarisasi (SAT/ACT/IB Level/A
-                                                    Level/EJU/sejenisnya).
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Mempersiapkan nilai yang baik untuk tes bahasa (TOEFL, IELTS, TELC,
-                                                    JLPT, dan
-                                                    sejenisnya).
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Mempersiapkan essay yang baik, kreatif, dan menarik.
-                                                </p>
-                                            </li>
-                                        </ul>
+                                    <p class="quiz-form__question">Serta hal-hal lainnya yang dapat mendukung persiapan
+                                        beasiswamu
+                                    </p>
+                                </form>
+                            <?php endif; ?>
 
-                                        <p class="quiz-form__question">Serta hal-hal lainnya yang dapat mendukung persiapan
-                                            beasiswamu
-                                        </p>
-                                    </form>
-                                <?php endif; ?>
-
-                                <?php if($academic == 0): ?>
-                                    <form class="form-result">
-                                        <br>
-                                        <p class="quiz-form__question"><b>Poin akademikmu</b> belum menyentuh angka minimum
-                                            dari
-                                            questionnaire ini, sehingga:</p>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Apabila kamu belum berada pada tahun terakhir sekolahmu, pastikan kamu
-                                                    bersungguh-bersungguh untuk
-                                                    menaikan atau mempertahankan nilai dan mendapatkan atau mempertahankan
-                                                    ranking
-                                                    (apabila
-                                                    sekolahmu
-                                                    memiliki sistem ranking)
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Apabila sulit bagimu untuk melakukan poin sebelumnya atau kamu telah
-                                                    berada
-                                                    dalam
-                                                    tahun
-                                                    terakhir
-                                                    sekolahmu, pertimbangkan dan manfaatkan peluang-peluang lain seperti
-                                                    pengalaman-pengalaman
-                                                    kepemimpinan atau pengembangan kemampuan
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Akan sangat membantu apabila kamu menyiapkan dan mengikuti tes-tes
-                                                    standarisasi,
-                                                    seperti
-                                                    SAT/ACT/IB Level/A Level/EJU/sejenisnya sebagai ‘nilai bonus’ dalam
-                                                    seleksi
-                                                    berkas
-                                                </p>
-                                            </li>
-                                        </ul>
-                                    </form>
+                            <?php if($academic == 0): ?>
+                                <form class="form-result">
                                     <br>
-                                <?php endif; ?>
+                                    <p class="quiz-form__question"><b>Poin akademikmu</b> belum menyentuh angka minimum
+                                        dari
+                                        questionnaire ini, sehingga:</p>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Apabila kamu belum berada pada tahun terakhir sekolahmu, pastikan kamu
+                                                bersungguh-bersungguh untuk
+                                                menaikan atau mempertahankan nilai dan mendapatkan atau mempertahankan
+                                                ranking
+                                                (apabila
+                                                sekolahmu
+                                                memiliki sistem ranking)
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Apabila sulit bagimu untuk melakukan poin sebelumnya atau kamu telah
+                                                berada
+                                                dalam
+                                                tahun
+                                                terakhir
+                                                sekolahmu, pertimbangkan dan manfaatkan peluang-peluang lain seperti
+                                                pengalaman-pengalaman
+                                                kepemimpinan atau pengembangan kemampuan
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Akan sangat membantu apabila kamu menyiapkan dan mengikuti tes-tes
+                                                standarisasi,
+                                                seperti
+                                                SAT/ACT/IB Level/A Level/EJU/sejenisnya sebagai ‘nilai bonus’ dalam
+                                                seleksi
+                                                berkas
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </form>
+                                <br>
+                            <?php endif; ?>
 
-                                <?php if($aktivitas == 0): ?>
-                                    <form class="form-result">
-                                        <br>
-                                        <p class="quiz-form__question"><b>Poin aktivitas/kegiatanmu </b> belum menyentuh
-                                            angka
-                                            minimum
-                                            dari
-                                            questionnaire ini, sehingga:</p>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Ikutilah dan perbanyaklah kegiatan-kegiatan yang mendukung pengembangan
-                                                    diri dan
-                                                    kepemimpinan, seperti:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Extracurricular.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Kepengurusan/kepanitiaan.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Volunteer</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Internship/part-time.</p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Inisiasikan suatu project yang memiliki manfaat untuk sekitar, seperti:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Komunitas/organisasi.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Kampanye isu-isu yang menjadi beban pemikiranmu.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Proyek pemecahan masalah di sekitarmu melalui ilmu sains dan sosial
-                                                <p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Inovasi alat-alat yang dapat mempermudah kegiatan manusia.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Inovasi karya seni</p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                    </form>
+                            <?php if($aktivitas == 0): ?>
+                                <form class="form-result">
                                     <br>
-                                <?php endif; ?>
+                                    <p class="quiz-form__question"><b>Poin aktivitas/kegiatanmu </b> belum menyentuh
+                                        angka
+                                        minimum
+                                        dari
+                                        questionnaire ini, sehingga:</p>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Ikutilah dan perbanyaklah kegiatan-kegiatan yang mendukung pengembangan
+                                                diri dan
+                                                kepemimpinan, seperti:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Extracurricular.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Kepengurusan/kepanitiaan.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Volunteer</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Internship/part-time.</p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Inisiasikan suatu project yang memiliki manfaat untuk sekitar, seperti:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Komunitas/organisasi.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Kampanye isu-isu yang menjadi beban pemikiranmu.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Proyek pemecahan masalah di sekitarmu melalui ilmu sains dan sosial
+                                            <p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Inovasi alat-alat yang dapat mempermudah kegiatan manusia.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Inovasi karya seni</p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </form>
+                                <br>
+                            <?php endif; ?>
 
-                                <?php if($personal_brand == 0): ?>
-                                    <form class="form-result">
-                                        <br>
-                                        <p class="quiz-form__question"><b>Poin personal brandmu</b> belum menyentuh angka
-                                            minimum
-                                            dari
-                                            questionnaire ini, sehingga:</p>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Cobalah untuk mengeksplorasi hal-hal yang mendukung pengembangan diri,
-                                                    pendidikan
-                                                    dan
-                                                    karirmu, seperti:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Jurusan yang kamu minati.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Universitas yang menurutmu metode pembelajaran dan lingkungannya
-                                                    mendukung
-                                                    kegiatan
-                                                    pembelajaranmu.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Kemampuan-kemampuan non akademik, seperti: seni, olahraga, dan
-                                                    sejenisnya.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Dan sebagainya.</p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Beberapa jenis media yang dapat digunakan untuk mengembangkan poin-poin
-                                                    diatas
-                                                    adalah:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Menghadiri campus/major expo.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Mengikuti kegiatan pelatihan/les.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Mengikuti short courses/bootcamp.
-                                                <p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Dan sebagainya.</p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                    </form>
+                            <?php if($personal_brand == 0): ?>
+                                <form class="form-result">
                                     <br>
-                                <?php endif; ?>
+                                    <p class="quiz-form__question"><b>Poin personal brandmu</b> belum menyentuh angka
+                                        minimum
+                                        dari
+                                        questionnaire ini, sehingga:</p>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Cobalah untuk mengeksplorasi hal-hal yang mendukung pengembangan diri,
+                                                pendidikan
+                                                dan
+                                                karirmu, seperti:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Jurusan yang kamu minati.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Universitas yang menurutmu metode pembelajaran dan lingkungannya
+                                                mendukung
+                                                kegiatan
+                                                pembelajaranmu.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Kemampuan-kemampuan non akademik, seperti: seni, olahraga, dan
+                                                sejenisnya.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Dan sebagainya.</p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Beberapa jenis media yang dapat digunakan untuk mengembangkan poin-poin
+                                                diatas
+                                                adalah:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Menghadiri campus/major expo.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Mengikuti kegiatan pelatihan/les.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Mengikuti short courses/bootcamp.
+                                            <p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Dan sebagainya.</p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </form>
+                                <br>
+                            <?php endif; ?>
 
-                                <?php if($prestasi == 0): ?>
-                                    <form class="form-result">
-                                        <br>
-                                        <p class="quiz-form__question"><b>Poin prestasimu</b> belum menyentuh angka
-                                            minimum
-                                            dari
-                                            questionnaire ini, sehingga:</p>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Cobalah dan ikutilah kegiatan-kegiatan lomba/konferensi/ajang pemilihan
-                                                    figur
-                                                    generasi
-                                                    muda,
-                                                    seperti:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Lomba/olimpiade, mulai tingkat sekolah hingga internasional.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Konferensi, seperti: Model United Nations, Summits, dan sejenisnya.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Ajang pemilihan figur generasi muda, seperti: Duta Bahasa, Duta Hukum,
-                                                    Abang
-                                                    None,
-                                                    dan
-                                                    sejenisnya.</p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Apabila kamu merasa tidak memungkinkan untuk menjalankan poin
-                                                    sebelumnya,
-                                                    pertimbangkan
-                                                    dan
-                                                    manfaatkan peluang-peluang lain seperti pelatihan, program loka-karya
-                                                    untuk
-                                                    mengembangkan skill mu.
-                                                </p>
-                                            </li>
-                                        </ul>
-                                    </form>
+                            <?php if($prestasi == 0): ?>
+                                <form class="form-result">
                                     <br>
-                                <?php endif; ?>
+                                    <p class="quiz-form__question"><b>Poin prestasimu</b> belum menyentuh angka
+                                        minimum
+                                        dari
+                                        questionnaire ini, sehingga:</p>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Cobalah dan ikutilah kegiatan-kegiatan lomba/konferensi/ajang pemilihan
+                                                figur
+                                                generasi
+                                                muda,
+                                                seperti:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Lomba/olimpiade, mulai tingkat sekolah hingga internasional.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Konferensi, seperti: Model United Nations, Summits, dan sejenisnya.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Ajang pemilihan figur generasi muda, seperti: Duta Bahasa, Duta Hukum,
+                                                Abang
+                                                None,
+                                                dan
+                                                sejenisnya.</p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Apabila kamu merasa tidak memungkinkan untuk menjalankan poin
+                                                sebelumnya,
+                                                pertimbangkan
+                                                dan
+                                                manfaatkan peluang-peluang lain seperti pelatihan, program loka-karya
+                                                untuk
+                                                mengembangkan skill mu.
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </form>
+                                <br>
+                            <?php endif; ?>
 
-                                <?php if($komunikasi == 0): ?>
-                                    <form class="form-result">
-                                        <p class="quiz-form__question"><b>Poin communication skillsmu </b> belum menyentuh
-                                            angka
-                                            minimum
-                                            dari questionnaire ini, sehingga:</p>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Persiapkan diri untuk mengikuti tes bahasa yang nilainya akan dibutuhkan
-                                                    dalam
-                                                    pendaftaran, seperti TOEFL, IELTS, TELC, JLPT, dan sejenisnya
-                                                </p>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Persiapkan diri untuk mengikuti interview, dengan:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Pelajari pertanyaan-pertanyaan apa saja yang sekiranya akan ditanyakan
-                                                    dalam
-                                                    umumnya
-                                                    sesi
-                                                    interview beasiswa.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Kenali metode/cara menjawab pertanyaan dengan baik, seperti: STAR Method
-                                                    dan
-                                                    sejenisnya.
-                                                </p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Gunakan interview simulation/ajak orang lain untuk melatihmu menjawab
-                                                    pertanyaan-pertanyaan dalam
-                                                    sesi interview.
-                                                </p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Pastikan kamu mengenal dirimu dengan baik dan fasih dengan bahasa yang
-                                                    digunakan
-                                                    dalam
-                                                    interview
-                                                    untuk memudahkanmu menjawab pertanyaan-pertanyaan yang ada.</p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                        <ul>
-                                            <li class="quiz-form__question2">
-                                                <p>
-                                                    Persiapkan diri untuk menulis sebuah essay yang baik dan sesuai
-                                                    kebutuhan,
-                                                    dengan:
-                                                </p>
-                                            <li class="quiz-form__question3">
-                                                <p>Mengenali kriteria essay yang baik dimata pemberi beasiswa.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Sesuaikan tema essay dengan tema yang diminta.</p>
-                                            </li>
-                                            <li class="quiz-form__question3">
-                                                <p>Gunakan bahasa yang baik dan mudah dicerna, namun tetap menarik untuk
-                                                    dibaca.
-                                                <p>
-                                            </li>
-                                            </li>
-                                        </ul>
-                                    </form>
-                                    <br>
-                                <?php endif; ?>
-                                
+                            <?php if($komunikasi == 0): ?>
+                                <form class="form-result">
+                                    <p class="quiz-form__question"><b>Poin communication skillsmu </b> belum menyentuh
+                                        angka
+                                        minimum
+                                        dari questionnaire ini, sehingga:</p>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Persiapkan diri untuk mengikuti tes bahasa yang nilainya akan dibutuhkan
+                                                dalam
+                                                pendaftaran, seperti TOEFL, IELTS, TELC, JLPT, dan sejenisnya
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Persiapkan diri untuk mengikuti interview, dengan:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Pelajari pertanyaan-pertanyaan apa saja yang sekiranya akan ditanyakan
+                                                dalam
+                                                umumnya
+                                                sesi
+                                                interview beasiswa.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Kenali metode/cara menjawab pertanyaan dengan baik, seperti: STAR Method
+                                                dan
+                                                sejenisnya.
+                                            </p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Gunakan interview simulation/ajak orang lain untuk melatihmu menjawab
+                                                pertanyaan-pertanyaan dalam
+                                                sesi interview.
+                                            </p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Pastikan kamu mengenal dirimu dengan baik dan fasih dengan bahasa yang
+                                                digunakan
+                                                dalam
+                                                interview
+                                                untuk memudahkanmu menjawab pertanyaan-pertanyaan yang ada.</p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="quiz-form__question2">
+                                            <p>
+                                                Persiapkan diri untuk menulis sebuah essay yang baik dan sesuai
+                                                kebutuhan,
+                                                dengan:
+                                            </p>
+                                        <li class="quiz-form__question3">
+                                            <p>Mengenali kriteria essay yang baik dimata pemberi beasiswa.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Sesuaikan tema essay dengan tema yang diminta.</p>
+                                        </li>
+                                        <li class="quiz-form__question3">
+                                            <p>Gunakan bahasa yang baik dan mudah dicerna, namun tetap menarik untuk
+                                                dibaca.
+                                            <p>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </form>
+                                <br>
+                            <?php endif; ?>
+                            
                             <p class="result_question">
                                 Sebagai pendaftar beasiswa, kamu perlu ingat bahwa sainganmu tidaklah sedikit sehingga
                                 membutuhkan
@@ -438,6 +440,66 @@
 
             </div>
         </div>
+    <?php $__env->stopSection(); ?>
+    <?php $__env->startSection('script'); ?>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+            var akademik = "<?php echo e($academic == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+            var aktivitas = "<?php echo e($aktivitas == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+            var prestasi = "<?php echo e($prestasi == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+            var personal_brand = "<?php echo e($personal_brand == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+            var komunikasi = "<?php echo e($komunikasi == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+            // alert(akademik);
+
+            const labels = [
+                'Akademik',
+                'Aktivitas',
+                'Prestasi',
+                'Personal Brand',
+                'Komunikasi'
+            ];
+
+            const data = {
+                labels: labels,
+                datasets: [{
+                    label: 'Hasil Kuesioner',
+                    data: [<?php echo e($bbb['academic']); ?>, <?php echo e($bbb['aktivitas']); ?>, <?php echo e($bbb['prestasi']); ?>,
+                        <?php echo e($bbb['personal_brand']); ?>, <?php echo e($bbb['komunikasi']); ?>
+
+                    ],
+                    backgroundColor: [
+                        akademik,
+                        aktivitas,
+                        prestasi,
+                        personal_brand,
+                        komunikasi
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 30
+                        }
+                    }
+                },
+            };
+
+
+            const myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        </script>
     <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('utama.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\quest\resources\views/konfirmasi/konfirmasi.blade.php ENDPATH**/ ?>

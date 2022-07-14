@@ -6,11 +6,8 @@
             <div class="col-md-8 ">
                 <div class="heading">
                     <h1 class="heading__text">Result</h1>
-                    {{ $academic }}
                 </div>
                 <form class="form-result">
-
-
                     <div class="quiz-form__quiz">
                         <p class="quiz-form__question">
                             @if ($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1)

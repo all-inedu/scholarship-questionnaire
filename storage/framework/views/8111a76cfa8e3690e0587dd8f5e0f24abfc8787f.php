@@ -6,12 +6,8 @@
             <div class="col-md-8 ">
                 <div class="heading">
                     <h1 class="heading__text">Result</h1>
-                    <?php echo e($academic); ?>
-
                 </div>
                 <form class="form-result">
-
-
                     <div class="quiz-form__quiz">
                         <p class="quiz-form__question">
                             <?php if($academic == 1 && $aktivitas == 1 && $prestasi == 1 && $personal_brand == 1 && $komunikasi == 1): ?>
@@ -404,11 +400,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-        var akademik = "<?php echo e($academic == 1 ? 'rgb(48,128,208,0.7)' : 'rgb(254,119,123)'); ?>";
-        var aktivitas = "<?php echo e($aktivitas == 1 ? 'rgb(48,128,208,0.7)' : 'rgb(254,119,123)'); ?>";
-        var prestasi = "<?php echo e($prestasi == 1 ? 'rgb(48,128,208,0.7)' : 'rgb(254,119,123)'); ?>";
-        var personal_brand = "<?php echo e($personal_brand == 1 ? 'rgb(48,128,208,0.7)' : 'rgb(254,119,123)'); ?>";
-        var komunikasi = "<?php echo e($komunikasi == 1 ? 'rgb(48,128,208,0.7)' : 'rgb(254,119,123)'); ?>";
+        var akademik = "<?php echo e($academic == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+        var aktivitas = "<?php echo e($aktivitas == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+        var prestasi = "<?php echo e($prestasi == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+        var personal_brand = "<?php echo e($personal_brand == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
+        var komunikasi = "<?php echo e($komunikasi == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
         // alert(akademik);
 
         const labels = [
@@ -416,7 +412,7 @@
             'Aktivitas',
             'Prestasi',
             'Personal Brand',
-            'Komunikasi',
+            'Komunikasi'
         ];
 
         const data = {
@@ -434,7 +430,6 @@
                     personal_brand,
                     komunikasi
                 ],
-
                 borderWidth: 1
             }]
         };

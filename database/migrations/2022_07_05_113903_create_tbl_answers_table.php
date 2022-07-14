@@ -21,7 +21,7 @@ class CreateTblAnswersTable extends Migration
             $table->string('answer');
             $table->timestamps();
 
-            $table->foreign('id_guest')->references('id')->on('tbl_guests');
+            $table->foreign('id_guest')->references('id')->on('tbl_guests')->onDelete('cascade');
         });
     }
 

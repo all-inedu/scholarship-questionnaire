@@ -7,8 +7,8 @@
                 <div class="row" style="justify-content: center;margin-bottom:1rem">
                     <img src="<?php echo e(asset('frontend')); ?>/images/all_in.webp" style="width: 30%" alt="">
                 </div>
-                <h3 class="title-register">Scholarship Questionnaire</h3>
-                <h5 class="sub-title-register">Registration Form</h5>
+                <h3 class="title-register">Scholarship Readiness Quiz</h3>
+                <h5 class="sub-title-register">Start Now!</h5>
 
                 <div class="row">
                     <div class="col-md-12">
@@ -42,12 +42,15 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
-                        <div class="form-wrapper">
-                            <label for="">Email:</label>
-                            <div class="form-holder">
-                                <i style="font-style: normal; font-size: 15px;">@</i>
-                                <input type="text" name="email" <?php $__errorArgs = ['email'];
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-wrapper">
+                                            <label for="">Email:</label>
+                                            <div class="form-holder">
+                                                <i style="font-style: normal; font-size: 15px;">@</i>
+                                                <input type="text" name="email" <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -55,22 +58,61 @@ $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                    class="form-control-satu" value="<?php echo e(old('email')); ?>" required>
-                            </div>
-                            <?php $__errorArgs = ['email'];
+                                                    class="form-control-satu"
+                                                    value="<?php echo e(old('full_name', $guest->email ?? null)); ?>" required>
+                                            </div>
+                                            <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <div class="invalid-feedback" role="alert">
-                                    <?php echo e($message); ?>
+                                                <div class="invalid-feedback" role="alert">
+                                                    <?php echo e($message); ?>
 
-                                </div>
-                            <?php unset($message);
+                                                </div>
+                                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-wrapper">
+                                            <label for="">Whatsapp Number:</label>
+                                            <div class="form-holder">
+                                                <i class="zmdi zmdi-phone-end"></i>
+                                                <input type="text" name="phone_number"
+                                                    <?php $__errorArgs = ['phone_number'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?> class="form-control-satu"
+                                                    value="<?php echo e(old('phone_number', $guest->phone_number ?? null)); ?>"
+                                                    required>
+                                            </div>
+                                            <?php $__errorArgs = ['phone_number'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                                <div class="invalid-feedback" role="alert">
+                                                    <?php echo e($message); ?>
+
+                                                </div>
+                                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="row">

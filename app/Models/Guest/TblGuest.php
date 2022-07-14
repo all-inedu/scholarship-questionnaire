@@ -12,7 +12,7 @@ class TblGuest extends Model
     protected $table = "tbl_guests";
     protected $primaryKey = "id";
     protected $fillable = [
-        'id','full_name','email','school_name','grade'
+        'id','full_name','email','phone_number','school_name','grade'
     ];
 
     public function pertanyaan()

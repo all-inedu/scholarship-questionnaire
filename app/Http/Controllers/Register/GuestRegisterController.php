@@ -50,21 +50,23 @@ class GuestRegisterController extends Controller
         $validatedData = $request->validate([
             'full_name'      => 'required|max:255',
             // 'email'          => 'required|unique:tbl_guests|email:rfc,dns',
-            'email'          => 'required|email:rfc,dns',
+            'email'          => 'required|email:rfc,dns|',
+            'phone_number'   => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9',
             'school_name'    => 'required', 'string',
             'grade'          => 'required|max:255',
         ]);
-
+// dd($request);
             $arrr = array();
             $register = new TblGuest();
             $register->full_name    = $request->full_name;
             $register->email        = $request->email;
+            $register->phone_number = $request->phone_number;
             $register->school_name  = $request->school_name;
             $register->grade        = $request->grade;
             // dd($akademik_no[$i]);
             $arrr[]=$register;
         
-        
+            // dd($register);
             if(empty($request->session()->get('register'))){
                 $guest_register = new TblGuest();
                 $guest_register->fill($validatedData);

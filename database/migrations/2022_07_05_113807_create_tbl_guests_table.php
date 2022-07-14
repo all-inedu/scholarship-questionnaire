@@ -17,6 +17,7 @@ class CreateTblGuestsTable extends Migration
             $table->id();
             $table->string('full_name');
             $table->string('email')->unique();
+            $table->string('phone_number')->unique();
             $table->string('school_name');
             $table->string('grade');
             $table->timestamps();

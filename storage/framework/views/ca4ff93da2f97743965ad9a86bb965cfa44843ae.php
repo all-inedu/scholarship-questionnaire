@@ -10,7 +10,28 @@
                 <div class="heading">
                     <h1 class="heading__text">Aktivitas</h1>
                 </div>
-
+                <div class="stepper-wrapper">
+                    <div class="stepper-item completed">
+                        <div class="step-counter">1</div>
+                        <div class="step-name">Akademis</div>
+                    </div>
+                    <div class="stepper-item ">
+                        <div class="step-counter active">2</div>
+                        <div class="step-name">Aktivitas</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter">3</div>
+                        <div class="step-name">Prestasi</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter">4</div>
+                        <div class="step-name">Personal Branding</div>
+                    </div>
+                    <div class="stepper-item">
+                        <div class="step-counter">5</div>
+                        <div class="step-name">Komunikasi</div>
+                    </div>
+                </div>
                 <!-- Quiz section -->
                 <div class="quiz">
                     <form method="POST" action="/aktivitas">
@@ -45,7 +66,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">2-3</span>
+                                <span class="text">3-4</span>
                             </label>
                             <label class="quiz-form__ans" for="q14">
                                 <input type="radio" name="answer[0]" id="q14" value="2"
@@ -53,7 +74,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">3-4</span>
+                                <span class="text">4-5</span>
                             </label>
                             <label class="quiz-form__ans" for="q15">
                                 <input type="radio" name="answer[0]" id="q15" value="3"
@@ -96,7 +117,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">2-3</span>
+                                <span class="text">3-4</span>
                             </label>
                             <label class="quiz-form__ans" for="q19">
                                 <input type="radio" name="answer[1]" id="q19" value="4"
@@ -104,7 +125,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">4-5</span>
+                                <span class="text">5-6</span>
                             </label>
                             <label class="quiz-form__ans" for="q20">
                                 <input type="radio" name="answer[1]" id="q20" value="6"
@@ -112,7 +133,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">&gt; 5</span>
+                                <span class="text">&gt; 6</span>
                             </label>
                         </div>
 
@@ -145,7 +166,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">2-3</span>
+                                <span class="text">3-4</span>
                             </label>
                             <label class="quiz-form__ans" for="q24">
                                 <input type="radio" name="answer[2]" id="q24" value="4"
@@ -153,7 +174,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">4-5</span>
+                                <span class="text">5-6</span>
                             </label>
                             <label class="quiz-form__ans" for="q25">
                                 <input type="radio" name="answer[2]" id="q25" value="6"
@@ -161,7 +182,7 @@
 
                                     required />
                                 <span class="design"></span>
-                                <span class="text">&gt; 5</span>
+                                <span class="text">&gt; 6</span>
                             </label>
                         </div>
 

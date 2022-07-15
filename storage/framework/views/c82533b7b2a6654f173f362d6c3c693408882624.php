@@ -10,7 +10,28 @@
                 <div class="heading">
                     <h1 class="heading__text">Komunikasi</h1>
                 </div>
-
+                <div class="stepper-wrapper">
+                    <div class="stepper-item completed">
+                        <div class="step-counter">1</div>
+                        <div class="step-name">Akademis</div>
+                    </div>
+                    <div class="stepper-item completed">
+                        <div class="step-counter">2</div>
+                        <div class="step-name">Aktivitas</div>
+                    </div>
+                    <div class="stepper-item completed">
+                        <div class="step-counter">3</div>
+                        <div class="step-name">Prestasi</div>
+                    </div>
+                    <div class="stepper-item completed">
+                        <div class="step-counter">4</div>
+                        <div class="step-name">Personal Branding</div>
+                    </div>
+                    <div class="stepper-item active">
+                        <div class="step-counter">5</div>
+                        <div class="step-name">Komunikasi</div>
+                    </div>
+                </div>
                 <!-- Quiz section -->
                 <div class="quiz">
                     <form method="POST" action="/komunikasi">

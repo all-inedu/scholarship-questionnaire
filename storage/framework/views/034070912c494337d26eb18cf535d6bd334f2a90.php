@@ -767,7 +767,7 @@
 
                                                                     </p>
                                                                     <p class="pl-3"
-                                                                        style="padding-top: 1.5rem;text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 16px; padding-left: 1rem;padding-right: 1rem; color: #535353; text-align: justify;">
+                                                                        style="text-align: left; font-family: Arial,Helvetica,sans-serif; font-weight: 400; font-size: 14px; padding-left: 1rem;padding-right: 1rem; color: #535353; text-align: justify;">
                                                                         Sebagai pendaftar beasiswa, kamu perlu
                                                                         ingat bahwa sainganmu tidaklah sedikit
                                                                         sehingga

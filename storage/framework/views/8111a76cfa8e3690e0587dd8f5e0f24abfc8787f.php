@@ -375,6 +375,15 @@
                             </form>
                             <br>
                         <?php endif; ?>
+                        
+                        <div>
+                            <p class="result_question">Gimana, belum puas sama hasil kuesionernya dan pengen maksimalin persiapan beasiswa kamu? Tidak ada kata "terlalu awal" atau "terlalu cepat" buat masa depan yang cerah!
+
+                                Yuk, download panduan GRATIS Beasiswa GRATIS sekarang buat dapetin informasi lengkap tentang beasiswa kuliah ke luar negeri!
+                                <br>
+                                <a href="https://all-inedu.com/guidebook/">AMBIL GUIDEBOOK GRATIS SEKARANG</a>
+                            </p>
+                        </div>
 
                         <p class="result_question">
                             Sebagai pendaftar beasiswa, kamu perlu ingat bahwa sainganmu tidaklah sedikit sehingga
@@ -400,6 +409,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+        var akademik_score = <?php echo e($bbb['academic']); ?>;
+        var aktivitas_score = <?php echo e($bbb['aktivitas']); ?>;
+        var prestasi_score = <?php echo e($bbb['prestasi']); ?>;
+        var personal_brand_score = <?php echo e($bbb['personal_brand']); ?>;
+        var komunikasi_score = <?php echo e($bbb['komunikasi']); ?>;
+
+        var akademik_clue = <?php echo e($academic); ?>;
+        var aktivitas_clue = <?php echo e($aktivitas); ?>;
+        var prestasi_clue = <?php echo e($prestasi); ?>;
+        var personal_brand_clue = <?php echo e($personal_brand); ?>;
+        var komunikasi_clue = <?php echo e($komunikasi); ?>;
+
+
         var akademik = "<?php echo e($academic == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
         var aktivitas = "<?php echo e($aktivitas == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
         var prestasi = "<?php echo e($prestasi == 1 ? 'rgb(98,198,153,0.7)' : 'rgb(254,119,123)'); ?>";
@@ -415,23 +437,72 @@
             'Komunikasi'
         ];
 
+        const set_1 = [];
+        const set_2 = [];
+
+        if (akademik_clue == 1) {
+            set_2.push(akademik_score);
+            set_1.push(0);
+        } else {
+            set_1.push(akademik_score);
+            set_2.push(0)
+        }
+
+        if (aktivitas_clue == 1) {
+            set_2.push(aktivitas_score);
+            set_1.push(0)
+        } else {
+            set_1.push(akademik_score);
+            set_2.push(0)
+        }
+
+        if (prestasi_clue == 1) {
+            set_2.push(prestasi_score);
+            set_1.push(0)
+        } else {
+            set_1.push(prestasi_score);
+            set_2.push(0)
+        }
+
+        if (personal_brand_clue == 1) {
+            set_2.push(personal_brand_score);
+            set_1.push(0)
+        } else {
+            set_1.push(personal_brand_score);
+            set_2.push(0)
+        }
+
+        if (komunikasi_clue == 1) {
+            set_2.push(komunikasi_score);
+            set_1.push(0)
+        } else {
+            set_1.push(komunikasi_score);
+            set_2.push(0)
+        }
+        
+
         const data = {
             labels: labels,
-            datasets: [{
-                label: 'Hasil Kuesioner',
-                data: [<?php echo e($bbb['academic']); ?>, <?php echo e($bbb['aktivitas']); ?>, <?php echo e($bbb['prestasi']); ?>,
-                    <?php echo e($bbb['personal_brand']); ?>, <?php echo e($bbb['komunikasi']); ?>
-
-                ],
-                backgroundColor: [
-                    akademik,
-                    aktivitas,
-                    prestasi,
-                    personal_brand,
-                    komunikasi
-                ],
-                borderWidth: 1
-            }]
+            datasets: [
+                {
+                    label: 'Ditingkatkan lagi, yuk!',
+                    data: set_1,
+                    backgroundColor: [
+                        akademik,
+                        aktivitas,
+                        prestasi,
+                        personal_brand,
+                        komunikasi
+                    ],
+                    borderWidth: 1
+                }, 
+                {
+                    label: 'Sudah oke, keep it up!',
+                    data: set_2,
+                    backgroundColor: ['rgb(98,198,153,0.7)'],
+                    borderWidth: 1
+                }
+            ]
         };
 
 
@@ -440,9 +511,19 @@
             data: data,
             options: {
                 scales: {
+                    x: {
+                        stacked:true,
+                    },
                     y: {
+                        stacked:true,
                         beginAtZero: true,
                         max: 30
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Hasil Kuesioner"
                     }
                 }
             },

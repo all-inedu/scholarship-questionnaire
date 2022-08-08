@@ -5,7 +5,7 @@
             <form method="POST" action="/guest">
                 <?php echo csrf_field(); ?>
                 <div class="row" style="justify-content: center;margin-bottom:1rem">
-                    <img src="<?php echo e(asset('frontend')); ?>/images/all_in.webp" style="width: 30%" alt="">
+                    <img src="<?php echo e(asset('frontend')); ?>/images/EDUVERSE LOGO-13.webp" style="width: 40%" alt="">
                 </div>
                 <h3 class="title-register">Scholarship Readiness Quiz</h3>
                 <h5 class="sub-title-register">Start Now!</h5>

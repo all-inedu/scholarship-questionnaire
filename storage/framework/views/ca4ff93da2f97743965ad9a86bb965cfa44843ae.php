@@ -15,8 +15,8 @@
                         <div class="step-counter">1</div>
                         <div class="step-name">Akademis</div>
                     </div>
-                    <div class="stepper-item ">
-                        <div class="step-counter active">2</div>
+                    <div class="stepper-item active">
+                        <div class="step-counter">2</div>
                         <div class="step-name">Aktivitas</div>
                     </div>
                     <div class="stepper-item">

@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8 ">
                 <div class="row" style="justify-content: center;margin-bottom:1rem">
-                    <img src="<?php echo e(asset('frontend')); ?>/images/ALLIN-LOGO-NEW-WHITE.webp" style="width: 20%" alt="">
+                    <img src="<?php echo e(asset('frontend')); ?>/images/EDUVERSE LOGO-13.webp" style="width: 35%" alt="">
                 </div>
                 <div class="heading">
                     <h1 class="heading__text">Questionnaire</h1>

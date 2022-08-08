@@ -804,7 +804,7 @@
                                                 <div style="border-spacing: 0; border-collapse: collapse; color: #007bff;background: rgb(255, 255, 255) !important; padding: 1em 0;"
                                                     align="center">
                                                     <img class="footer"
-                                                        src="https://all-inedu.com/wp-content/uploads/2022/05/ALLIN-LOGO-NEW-1.png"
+                                                        src="https://all-inedu.com/wp-content/uploads/2022/08/EDUVERSE-LOGO-13-2.png"
                                                         style="width: 25%; height: auto; line-height: 100%; outline: none; text-decoration: none; display: block; align-items: center;border-style: none; border-width: 0;">
                                                     <h3 class="footer-title"
                                                         style="width: 80%;text-align: center; font-family: Arial,Helvetica,sans-serif; font-weight: 300; font-size: 16px; color: #233872;">
